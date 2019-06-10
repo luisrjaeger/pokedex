@@ -15,6 +15,16 @@ class RequestMaker {
         case list
         case details(query: String)
         case moves
+        case move(query: String)
+        
+        var baseUrl: String {
+            switch self {
+            case .move:
+                return "https://pokeapi.co/api/v2/"
+            default:
+                return "http://localhost:3000/"
+            }
+        }
         
         var url: String {
             switch self {
@@ -24,19 +34,19 @@ class RequestMaker {
                 return "details/\(query)"
             case .moves:
                 return "moves"
+            case let .move(query):
+                return "move/\(query)"
             }
         }
         
     }
-    
-    let baseUrl = "http://localhost:3000/"
+
     let session = URLSession.shared
     
     typealias CompletionCallback<T: Decodable> = (T) -> Void
     
     func make<T: Decodable>(withEndpoint endpoint: Endpoint, completion: @escaping CompletionCallback<T>) {
-        
-        guard let url = URL(string: "\(baseUrl)\(endpoint.url)") else {
+        guard let url = URL(string: "\(endpoint.baseUrl)\(endpoint.url)") else {
             return
         }
         
@@ -63,5 +73,5 @@ class RequestMaker {
         
         dataTask.resume()
     }
-    
+
 }

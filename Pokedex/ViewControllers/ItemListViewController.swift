@@ -10,4 +10,9 @@ import UIKit
 
 class ItemListViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+    }
+    
 }
