@@ -61,10 +61,6 @@ extension PokemonListViewController: UITableViewDelegate {
 extension PokemonListViewController {
     
     func fetchData() {
-//        requestMaker.make(withEndpoint: .details(query: "1")) {
-//            (pokemon: Pokemon) in
-//            print(pokemon)
-//        }
         requestMaker.make(withEndpoint: .list) {
             (pokemonList: PokemonList) in
             self.pokemonList = pokemonList.pokemons

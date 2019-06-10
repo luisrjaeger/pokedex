@@ -44,7 +44,7 @@ class RequestMaker {
             (data: Data?, response: URLResponse?, error: Error?) in
             
             guard error == nil else {
-                print(error)
+                print(error!)
                 return
             }
             

@@ -57,23 +57,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="Oe5-I5-APJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="move" rowHeight="75" id="Oe5-I5-APJ" customClass="MoveTableViewCell" customModule="Pokedex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oe5-I5-APJ" id="cJS-bC-trS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ballshadow" translatesAutoresizingMaskIntoConstraints="NO" id="IId-KR-vmI">
-                                                    <rect key="frame" x="20" y="12.5" width="50" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="aAW-EQ-Pfu"/>
-                                                        <constraint firstAttribute="width" constant="50" id="rsu-gr-FXI"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucG-65-H5H">
-                                                    <rect key="frame" x="88" y="27" width="71.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="18" y="24.5" width="80" height="26"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                     <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -98,14 +91,16 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="IId-KR-vmI" firstAttribute="leading" secondItem="cJS-bC-trS" secondAttribute="leading" constant="20" id="28s-BE-K76"/>
                                                 <constraint firstItem="ucG-65-H5H" firstAttribute="centerY" secondItem="cJS-bC-trS" secondAttribute="centerY" id="639-Rt-XDQ"/>
                                                 <constraint firstItem="giQ-ng-5BO" firstAttribute="centerY" secondItem="cJS-bC-trS" secondAttribute="centerY" id="BqI-Gy-0yC"/>
-                                                <constraint firstItem="ucG-65-H5H" firstAttribute="leading" secondItem="IId-KR-vmI" secondAttribute="trailing" constant="18" id="PF7-PN-b2G"/>
+                                                <constraint firstItem="ucG-65-H5H" firstAttribute="leading" secondItem="cJS-bC-trS" secondAttribute="leading" constant="18" id="Byt-bx-XNQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="giQ-ng-5BO" secondAttribute="trailing" constant="15" id="kuF-dj-CJp"/>
-                                                <constraint firstItem="IId-KR-vmI" firstAttribute="centerY" secondItem="cJS-bC-trS" secondAttribute="centerY" id="lgF-tx-H2y"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="ucG-65-H5H" id="xpI-rT-Dup"/>
+                                            <outlet property="type" destination="PLI-RA-xsj" id="Hoq-JI-Ore"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -338,7 +333,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="Z5L-OK-vRy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail" rowHeight="130" id="Z5L-OK-vRy">
                                         <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z5L-OK-vRy" id="xKX-vt-qRV">
