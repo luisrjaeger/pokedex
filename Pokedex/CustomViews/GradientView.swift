@@ -40,6 +40,11 @@ class GradientView: UIView {
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
     }
     
+    func setGradientColor(to color: UIColor?) {
+        startColor = color ?? .white
+        endColor = (color ?? .white).withAlphaComponent(0.5)
+    }
+    
     override public func layoutSubviews() {
         super.layoutSubviews()
         updatePoints()

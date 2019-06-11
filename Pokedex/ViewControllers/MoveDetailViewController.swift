@@ -14,6 +14,15 @@ class MoveDetailViewController: UIViewController {
     
     let requestMaker = RequestMaker()
     
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var iconTypeLabelImageView: UIImageView!
+    @IBOutlet weak var nameTypeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var powerLabel: UILabel!
+    @IBOutlet weak var accuracyLabel: UILabel!
+    @IBOutlet weak var ppLabel: UILabel!
+    
     @IBAction func backAction() {
         dismiss(animated: true, completion: nil)
     }
@@ -23,10 +32,21 @@ class MoveDetailViewController: UIViewController {
     }
     
     private func config(move: MoveDetail) {
-        if let superView = view as? GradientView {
-            superView.startColor = move.type.name.color ?? .white
-            superView.endColor = (move.type.name.color ?? .white).withAlphaComponent(0.5)
-        }
+        if let superView = view as? GradientView { superView.setGradientColor(to: move.type.name.color) }
+        
+        let icon = move.type.name.icon
+        let color = move.type.name.color
+        
+        titleLabel.text = move.name.capitalized
+        
+        iconImageView.image = icon
+        (iconImageView.superview as? GradientView)?.setGradientColor(to: color)
+        
+        nameTypeLabel.text = move.type.name.rawValue.uppercased()
+        
+        iconTypeLabelImageView.image = icon
+        (iconTypeLabelImageView.superview as? GradientView)?.setGradientColor(to: color)
+        
     }
     
 }
