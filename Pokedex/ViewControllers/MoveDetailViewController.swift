@@ -20,8 +20,11 @@ class MoveDetailViewController: UIViewController {
     @IBOutlet weak var nameTypeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var powerLabel: UILabel!
+    @IBOutlet weak var powerTitleLabel: UILabel!
     @IBOutlet weak var accuracyLabel: UILabel!
+    @IBOutlet weak var accuracyTitleLabel: UILabel!
     @IBOutlet weak var ppLabel: UILabel!
+    @IBOutlet weak var ppTitleLabel: UILabel!
     
     @IBAction func backAction() {
         dismiss(animated: true, completion: nil)
@@ -47,6 +50,15 @@ class MoveDetailViewController: UIViewController {
         iconTypeLabelImageView.image = icon
         (iconTypeLabelImageView.superview as? GradientView)?.setGradientColor(to: color)
         
+        descriptionLabel.text = move.effectEntries.first?.effect
+        
+        powerTitleLabel.textColor = color
+        accuracyTitleLabel.textColor = color
+        ppTitleLabel.textColor = color
+        
+        powerLabel.text = "\(move.power ?? 0)"
+        accuracyLabel.text = "\(move.accuracy ?? 0)%"
+        ppLabel.text = "\(move.pp ?? 0)"
     }
     
 }
