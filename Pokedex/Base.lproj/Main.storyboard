@@ -257,7 +257,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="I8J-hG-jIo"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                        <color key="textColor" name="text"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c6-SQ-uua">
@@ -284,7 +284,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ild-9C-avI">
                                                         <rect key="frame" x="0.0" y="0.0" width="88.5" height="40"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                        <color key="textColor" name="text"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vW-dg-KRJ">
@@ -308,7 +308,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBV-wD-JGT">
                                                         <rect key="frame" x="0.0" y="0.0" width="88.5" height="40"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                        <color key="textColor" name="text"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ent-RT-Eq3">
@@ -739,7 +739,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAF-i3-OBJ">
-                                        <rect key="frame" x="169.5" y="170" width="75" height="20.5"/>
+                                        <rect key="frame" x="20" y="170" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <color key="textColor" name="text"/>
                                         <nil key="highlightedColor"/>
@@ -747,7 +747,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-qA-6yu" userLabel="stats">
                                         <rect key="frame" x="186" y="210.5" width="42.5" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                        <color key="textColor" name="text"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCC-GC-TAv" customClass="PokemonTypeView" customModule="Pokedex" customModuleProvider="target">
@@ -758,46 +758,45 @@
                                             <constraint firstAttribute="height" constant="30" id="p4t-PU-iEB"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lNe-pH-Q24">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lNe-pH-Q24" userLabel="stackStats">
                                         <rect key="frame" x="10" y="251" width="394" height="290"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dF7-gf-4ig" userLabel="hp">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dF7-gf-4ig" userLabel="hp" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="05i-1g-0E5"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yph-rq-Hse" userLabel="atk">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yph-rq-Hse" userLabel="atk" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="SP3-Iu-Tma"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C5-va-sVP" userLabel="def">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5C5-va-sVP" userLabel="def" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="100" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="MmJ-7E-q0p"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GAr-TO-zc6" userLabel="satk">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAr-TO-zc6" userLabel="satk" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="150" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="obl-yz-Cmj"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WV9-jA-TS6" userLabel="sdef">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WV9-jA-TS6" userLabel="sdef" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="200" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="60N-7w-Ota"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2dI-y1-Xup" userLabel="spd">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dI-y1-Xup" userLabel="spd" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="250" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -811,13 +810,15 @@
                                 <constraints>
                                     <constraint firstItem="lWl-qA-6yu" firstAttribute="centerX" secondItem="ol4-db-0c1" secondAttribute="centerX" id="EfR-Jf-oDq"/>
                                     <constraint firstItem="gCC-GC-TAv" firstAttribute="top" secondItem="VcT-CH-gTr" secondAttribute="bottom" constant="10" id="I30-ax-XA8"/>
-                                    <constraint firstItem="MAF-i3-OBJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ol4-db-0c1" secondAttribute="leading" id="RzT-Qo-vqc"/>
+                                    <constraint firstItem="lNe-pH-Q24" firstAttribute="leading" secondItem="ol4-db-0c1" secondAttribute="leading" constant="10" id="KEr-zU-qPP"/>
+                                    <constraint firstItem="MAF-i3-OBJ" firstAttribute="leading" secondItem="ol4-db-0c1" secondAttribute="leading" constant="20" id="L8I-1c-A5i"/>
                                     <constraint firstItem="gCC-GC-TAv" firstAttribute="centerX" secondItem="ol4-db-0c1" secondAttribute="centerX" id="SO6-BI-d0U"/>
+                                    <constraint firstAttribute="trailing" secondItem="lNe-pH-Q24" secondAttribute="trailing" constant="10" id="afJ-hC-66s"/>
                                     <constraint firstItem="lWl-qA-6yu" firstAttribute="top" secondItem="MAF-i3-OBJ" secondAttribute="bottom" constant="20" id="cEe-H6-fbX"/>
-                                    <constraint firstItem="MAF-i3-OBJ" firstAttribute="centerX" secondItem="ol4-db-0c1" secondAttribute="centerX" id="n7n-b0-EcU"/>
+                                    <constraint firstItem="lNe-pH-Q24" firstAttribute="top" secondItem="lWl-qA-6yu" secondAttribute="bottom" constant="20" id="lvJ-1x-8WY"/>
                                     <constraint firstItem="MAF-i3-OBJ" firstAttribute="top" secondItem="gCC-GC-TAv" secondAttribute="bottom" constant="20" id="nKg-EH-5ss"/>
                                     <constraint firstItem="VcT-CH-gTr" firstAttribute="top" secondItem="ol4-db-0c1" secondAttribute="top" constant="55" id="qWC-38-cPf"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MAF-i3-OBJ" secondAttribute="trailing" id="svq-G8-K9E"/>
+                                    <constraint firstAttribute="trailing" secondItem="MAF-i3-OBJ" secondAttribute="trailing" constant="20" id="tJL-Lp-m4T"/>
                                     <constraint firstItem="VcT-CH-gTr" firstAttribute="centerX" secondItem="ol4-db-0c1" secondAttribute="centerX" id="zX1-cT-6MJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -872,13 +873,22 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="atk" destination="yph-rq-Hse" id="yeH-zv-2Os"/>
                         <outlet property="backButton" destination="VWH-gW-kei" id="ti1-Jd-VsZ"/>
+                        <outlet property="def" destination="5C5-va-sVP" id="bOa-uT-lBc"/>
+                        <outlet property="descriptionView" destination="MAF-i3-OBJ" id="PRD-mY-JXy"/>
+                        <outlet property="hp" destination="dF7-gf-4ig" id="CWd-bE-08I"/>
                         <outlet property="imageCenterVertically" destination="Z07-Z8-Qfg" id="8K9-uh-akh"/>
                         <outlet property="imageConstraintTop" destination="Tpq-om-zaM" id="4VK-AC-SSV"/>
                         <outlet property="imageHeight" destination="273-Bn-U3a" id="aqT-lN-x55"/>
                         <outlet property="imageView" destination="iWi-WA-iNO" id="Im2-zA-XeJ"/>
                         <outlet property="imageWidth" destination="rBZ-1N-JOh" id="EiD-6u-Dc7"/>
+                        <outlet property="name" destination="VcT-CH-gTr" id="0Dh-qF-LMy"/>
                         <outlet property="pokemonTypeView" destination="gCC-GC-TAv" id="LNK-xn-YYd"/>
+                        <outlet property="satk" destination="GAr-TO-zc6" id="2pa-zT-eAu"/>
+                        <outlet property="sdef" destination="WV9-jA-TS6" id="49J-nG-pOZ"/>
+                        <outlet property="spd" destination="2dI-y1-Xup" id="S5b-Ro-m4e"/>
+                        <outlet property="statLabel" destination="lWl-qA-6yu" id="kyi-EI-ALC"/>
                         <outlet property="superView" destination="Ifc-X2-JEM" id="nKK-C7-xDY"/>
                         <outlet property="whitePanelTopConstraint" destination="B14-Xg-FcC" id="i04-RU-C8o"/>
                     </connections>

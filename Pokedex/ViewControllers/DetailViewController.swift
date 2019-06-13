@@ -15,11 +15,20 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var pokemonTypeView: PokemonTypeView!
+    @IBOutlet weak var descriptionView: UILabel!
+    @IBOutlet weak var statLabel: UILabel!
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
     @IBOutlet weak var imageWidth: NSLayoutConstraint!
     @IBOutlet weak var imageCenterVertically: NSLayoutConstraint!
     @IBOutlet weak var imageConstraintTop: NSLayoutConstraint!
     @IBOutlet weak var whitePanelTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var hp: StatBarView!
+    @IBOutlet weak var atk: StatBarView!
+    @IBOutlet weak var def: StatBarView!
+    @IBOutlet weak var satk: StatBarView!
+    @IBOutlet weak var sdef: StatBarView!
+    @IBOutlet weak var spd: StatBarView!
     
     let requestMaker: RequestMaker = RequestMaker()
     
@@ -50,12 +59,12 @@ class DetailViewController: UIViewController {
     }
     
     func animateImageToTop() {
-        self.imageView.layer.removeAllAnimations()
+        imageView.layer.removeAllAnimations()
         
-        self.imageCenterVertically.priority = UILayoutPriority(rawValue: 949)
-        self.imageWidth.priority = UILayoutPriority(rawValue: 949)
-        self.imageHeight.priority = UILayoutPriority(rawValue: 949)
-        self.whitePanelTopConstraint.priority = UILayoutPriority(rawValue: 949)
+        imageCenterVertically.priority = UILayoutPriority(rawValue: 949)
+        imageWidth.priority = UILayoutPriority(rawValue: 949)
+        imageHeight.priority = UILayoutPriority(rawValue: 949)
+        whitePanelTopConstraint.priority = UILayoutPriority(rawValue: 949)
         
         UIView.animate(withDuration: 1) {
             self.imageView.alpha = 1
@@ -65,9 +74,18 @@ class DetailViewController: UIViewController {
     
     func config() {
         if let pokemon = self.pokemon {
-            superView.setGradientColor(regressing: pokemon.types.first?.color)
+            let color = pokemon.types.first?.color
+            
+            superView.setGradientColor(regressing: color)
             imageView.loadImage(from: pokemon.image)
+            statLabel.textColor = color
+            
+            name.text = pokemon.name.capitalized
         }
+    }
+    
+    func configStats() {
+        descriptionView.text = pokemon?.description//?.removingAllNewlines
     }
     
 }
@@ -82,6 +100,7 @@ extension DetailViewController {
                 self.pokemon = pokemon
                 DispatchQueue.main.async {
                     self.animateImageToTop()
+                    self.configStats()
                 }
             }
         }

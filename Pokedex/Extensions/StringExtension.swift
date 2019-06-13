@@ -26,4 +26,8 @@ extension String {
         }
     }
     
+    var removingAllNewlines: String {
+        return filter { !$0.isNewline }
+    }
+    
 }

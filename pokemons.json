@@ -217,7 +217,7 @@
                     "value": 45
                 }
             ],
-            "description": "A strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKéMON."
+            "description": "A strange seed was planted on its back at birth.\fThe plant sprouts and grows with this POKéMON."
         },
         {
             "name": "ivysaur",
@@ -253,7 +253,7 @@
                     "value": 60
                 }
             ],
-            "description": "When the bulb on\nits back grows\nlarge, it appears\fto lose the\nability to stand\non its hind legs."
+            "description": "When the bulb on its back grows large, it appears\fto lose the ability to stand on its hind legs."
         },
         {
             "name": "venusaur",
@@ -289,7 +289,7 @@
                     "value": 80
                 }
             ],
-            "description": "The plant blooms\nwhen it is\nabsorbing solar\fenergy. It stays\non the move to\nseek sunlight."
+            "description": "The plant blooms when it is absorbing solar\fenergy. It stays on the move to seek sunlight."
         },
         {
             "name": "charmander",
@@ -324,7 +324,7 @@
                     "value": 39
                 }
             ],
-            "description": "Obviously prefers\nhot places. When\nit rains, steam\fis said to spout\nfrom the tip of\nits tail."
+            "description": "Obviously prefers hot places. When it rains, steam\fis said to spout from the tip of its tail."
         },
         {
             "name": "charmeleon",
@@ -359,7 +359,7 @@
                     "value": 58
                 }
             ],
-            "description": "When it swings\nits burning tail,\nit elevates the\ftemperature to\nunbearably high\nlevels."
+            "description": "When it swings its burning tail, it elevates the\ftemperature to unbearably high levels."
         },
         {
             "name": "charizard",
@@ -395,7 +395,7 @@
                     "value": 78
                 }
             ],
-            "description": "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally."
+            "description": "Spits fire that is hot enough to melt boulders.\fKnown to cause forest fires unintentionally."
         },
         {
             "name": "squirtle",
@@ -430,7 +430,7 @@
                     "value": 44
                 }
             ],
-            "description": "After birth, its\nback swells and\nhardens into a\fshell. Powerfully\nsprays foam from\nits mouth."
+            "description": "After birth, its back swells and hardens into a\fshell. Powerfully sprays foam from its mouth."
         },
         {
             "name": "wartortle",
@@ -465,7 +465,7 @@
                     "value": 59
                 }
             ],
-            "description": "Often hides in\nwater to stalk\nunwary prey. For\fswimming fast, it\nmoves its ears to\nmaintain balance."
+            "description": "Often hides in water to stalk unwary prey. For\fswimming fast, it moves its ears to maintain balance."
         },
         {
             "name": "blastoise",
@@ -500,7 +500,7 @@
                     "value": 79
                 }
             ],
-            "description": "A brutal POKéMON\nwith pressurized\nwater jets on its\fshell. They are\nused for high\nspeed tackles."
+            "description": "A brutal POKéMON with pressurized water jets on its\fshell. They are used for high speed tackles."
         },
         {
             "name": "caterpie",
@@ -535,7 +535,7 @@
                     "value": 45
                 }
             ],
-            "description": "Its short feet\nare tipped with\nsuction pads that\fenable it to\ntirelessly climb\nslopes and walls."
+            "description": "Its short feet are tipped with suction pads that\fenable it to tirelessly climb slopes and walls."
         },
         {
             "name": "metapod",
@@ -570,7 +570,7 @@
                     "value": 50
                 }
             ],
-            "description": "This POKéMON is\nvulnerable to\nattack while its\fshell is soft,\nexposing its weak\nand tender body."
+            "description": "This POKéMON is vulnerable to attack while its\fshell is soft, exposing its weak and tender body."
         },
         {
             "name": "butterfree",
@@ -606,7 +606,7 @@
                     "value": 60
                 }
             ],
-            "description": "In battle, it\nflaps its wings\nat high speed to\frelease highly\ntoxic dust into\nthe air."
+            "description": "In battle, it flaps its wings at high speed to\frelease highly toxic dust into the air."
         },
         {
             "name": "weedle",
@@ -642,7 +642,7 @@
                     "value": 40
                 }
             ],
-            "description": "Often found in\nforests, eating\nleaves.\fIt has a sharp\nvenomous stinger\non its head."
+            "description": "Often found in forests, eating leaves.\fIt has a sharp venomous stinger on its head."
         },
         {
             "name": "kakuna",
@@ -678,7 +678,7 @@
                     "value": 45
                 }
             ],
-            "description": "Almost incapable\nof moving, this\nPOKéMON can only\fharden its shell\nto protect itself\nfrom predators."
+            "description": "Almost incapable of moving, this POKéMON can only\fharden its shell to protect itself from predators."
         },
         {
             "name": "beedrill",
@@ -714,7 +714,7 @@
                     "value": 65
                 }
             ],
-            "description": "Flies at high\nspeed and attacks\nusing its large\fvenomous stingers\non its forelegs\nand tail."
+            "description": "Flies at high speed and attacks using its large\fvenomous stingers on its forelegs and tail."
         },
         {
             "name": "pidgey",
@@ -750,7 +750,7 @@
                     "value": 40
                 }
             ],
-            "description": "A common sight in\nforests and woods.\nIt flaps its\fwings at ground\nlevel to kick up\nblinding sand."
+            "description": "A common sight in forests and woods. It flaps its\fwings at ground level to kick up blinding sand."
         },
         {
             "name": "pidgeotto",
@@ -786,7 +786,7 @@
                     "value": 63
                 }
             ],
-            "description": "Very protective\nof its sprawling\nterritorial area,\fthis POKéMON will\nfiercely peck at\nany intruder."
+            "description": "Very protective of its sprawling territorial area,\fthis POKéMON will fiercely peck at any intruder."
         },
         {
             "name": "pidgeot",
@@ -822,7 +822,7 @@
                     "value": 83
                 }
             ],
-            "description": "When hunting, it\nskims the surface\nof water at high\fspeed to pick off\nunwary prey such\nas MAGIKARP."
+            "description": "When hunting, it skims the surface of water at high\fspeed to pick off unwary prey such as MAGIKARP."
         },
         {
             "name": "rattata",
@@ -857,7 +857,7 @@
                     "value": 30
                 }
             ],
-            "description": "Bites anything\nwhen it attacks.\nSmall and very\fquick, it is a\ncommon sight in\nmany places."
+            "description": "Bites anything when it attacks. Small and very\fquick, it is a common sight in many places."
         },
         {
             "name": "raticate",
@@ -892,7 +892,7 @@
                     "value": 55
                 }
             ],
-            "description": "It uses its whis­\nkers to maintain\nits balance.\fIt apparently\nslows down if\nthey are cut off."
+            "description": "It uses its whis­ kers to maintain its balance.\fIt apparently slows down if they are cut off."
         },
         {
             "name": "pikachu",
