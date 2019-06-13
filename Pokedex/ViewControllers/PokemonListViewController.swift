@@ -48,7 +48,7 @@ extension PokemonListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemon", for: indexPath)
         
         let background = UIView()
-        background.backgroundColor = searchList[indexPath.row].types.first?.color?.lighter() ?? .gray
+        background.backgroundColor = (searchList[indexPath.row].types.first?.color ?? .gray).withAlphaComponent(0.1)
         cell.selectedBackgroundView = background
         
         if let pokemonCell = cell as? PokemonTableViewCell {

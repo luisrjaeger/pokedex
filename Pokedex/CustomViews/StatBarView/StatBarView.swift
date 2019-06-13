@@ -18,10 +18,14 @@ class StatBarView: UIView {
     
     @IBOutlet weak var value: UILabel!
     
+    @IBOutlet weak var bar: GradientView!
+    
     @IBOutlet weak var barContent: GradientView!
     @IBOutlet weak var barContentConstraint: NSLayoutConstraint!
     
     @IBInspectable var statLabel: String = ""
+    
+    var baseValue: Float!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,8 +51,10 @@ class StatBarView: UIView {
         name.textColor = color
         barContent.setGradientColor(progressing: color)
         
+        baseValue = Float(bar.frame.width) / 150
+        
         UIView.animate(withDuration: 1, delay: 1, animations: {
-            self.barContentConstraint.priority = UILayoutPriority(rawValue: 949)
+            self.barContentConstraint.constant = CGFloat(self.baseValue * Float(stat?.value ?? 0) - Float(self.bar.frame.width))
             self.layoutIfNeeded()
         }, completion: nil)
     }

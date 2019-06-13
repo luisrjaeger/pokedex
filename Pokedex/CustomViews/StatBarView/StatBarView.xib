@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
             <connections>
+                <outlet property="bar" destination="682-xU-VPv" id="IgW-tS-W5W"/>
                 <outlet property="barContent" destination="Fss-RQ-PUc" id="aDZ-9d-qmg"/>
                 <outlet property="barContentConstraint" destination="wrX-vo-faW" id="7jh-5i-vqf"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Sgy-Wp-bX9"/>
@@ -44,7 +45,7 @@
                     <rect key="frame" x="106.5" y="10" width="297.5" height="10"/>
                     <subviews>
                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fss-RQ-PUc" userLabel="barContent" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="2" height="10"/>
+                            <rect key="frame" x="0.0" y="0.0" width="27.5" height="10"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
@@ -67,7 +68,7 @@
                         <constraint firstAttribute="bottom" secondItem="Fss-RQ-PUc" secondAttribute="bottom" id="HCl-lU-6dN"/>
                         <constraint firstItem="Fss-RQ-PUc" firstAttribute="top" secondItem="682-xU-VPv" secondAttribute="top" id="VAl-bd-bQt"/>
                         <constraint firstItem="Fss-RQ-PUc" firstAttribute="width" secondItem="682-xU-VPv" secondAttribute="width" priority="950" id="wYB-tJ-Upr"/>
-                        <constraint firstItem="Fss-RQ-PUc" firstAttribute="width" secondItem="682-xU-VPv" secondAttribute="width" multiplier="1:150" priority="951" id="wrX-vo-faW"/>
+                        <constraint firstItem="Fss-RQ-PUc" firstAttribute="width" secondItem="682-xU-VPv" secondAttribute="width" priority="951" constant="-270" id="wrX-vo-faW"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
@@ -81,6 +82,11 @@
                             <color key="value" name="empty-bar"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="wYB-tJ-Upr"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
