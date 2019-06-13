@@ -11,46 +11,80 @@ import UIKit
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var superView: GradientView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var pokemonTypeView: PokemonTypeView!
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    @IBOutlet weak var imageWidth: NSLayoutConstraint!
+    @IBOutlet weak var imageCenterVertically: NSLayoutConstraint!
+    @IBOutlet weak var imageConstraintTop: NSLayoutConstraint!
+    @IBOutlet weak var whitePanelTopConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var tableView: UITableView!
+    let requestMaker: RequestMaker = RequestMaker()
     
     @IBAction func backAction() {
         dismiss(animated: true, completion: nil)
     }
     
+    var pokemon: Pokemon?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        config()
+        fetchData()
+        if let type = pokemon?.types.first {
+            pokemonTypeView.config(type: type)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if pokemon?.description == nil { self.loadingAnimation() }
+    }
+    
+    func loadingAnimation() {
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.imageView.alpha = 0.2
+        })
+    }
+    
+    func animateImageToTop() {
+        self.imageView.layer.removeAllAnimations()
+        
+        self.imageCenterVertically.priority = UILayoutPriority(rawValue: 949)
+        self.imageWidth.priority = UILayoutPriority(rawValue: 949)
+        self.imageHeight.priority = UILayoutPriority(rawValue: 949)
+        self.whitePanelTopConstraint.priority = UILayoutPriority(rawValue: 949)
+        
+        UIView.animate(withDuration: 1) {
+            self.imageView.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func config() {
+        if let pokemon = self.pokemon {
+            superView.setGradientColor(regressing: pokemon.types.first?.color)
+            imageView.loadImage(from: pokemon.image)
+        }
+    }
+    
 }
 
-extension DetailViewController: UITableViewDataSource {
+extension DetailViewController {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.section == 0 {
-//            return tableView.dequeueReusableCell(withIdentifier: "empty-space")
-//        }
-        
-        return UITableViewCell()
-    }
-    
-}
-
-extension DetailViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        
-        return UIView()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 { return 48 }
-        return 0
+    func fetchData() {
+        if let pokemon = self.pokemon {
+            requestMaker.make(withEndpoint: .details(query: pokemon.id)) {
+                (pokemon: Pokemon) in
+                
+                self.pokemon = pokemon
+                DispatchQueue.main.async {
+                    self.animateImageToTop()
+                }
+            }
+        }
     }
     
 }

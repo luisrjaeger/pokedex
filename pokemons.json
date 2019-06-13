@@ -893,6 +893,41 @@
                 }
             ],
             "description": "It uses its whis­\nkers to maintain\nits balance.\fIt apparently\nslows down if\nthey are cut off."
+        },
+        {
+            "name": "pikachu",
+            "id": "25",
+            "types": [
+                "electric"
+            ],
+            "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+            "stats": [
+                {
+                    "value": 90,
+                    "name": "speed"
+                },
+                {
+                    "value": 50,
+                    "name": "special-defense"
+                },
+                {
+                    "value": 50,
+                    "name": "special-attack"
+                },
+                {
+                    "value": 40,
+                    "name": "defense"
+                },
+                {
+                    "value": 55,
+                    "name": "attack"
+                },
+                {
+                    "value": 35,
+                    "name": "hp"
+                }
+            ],
+            "description": "Its nature is to store up electricity. Forests where nests of Pikachu live are dangerous, since the trees are so often struck by lightning."
         }
     ],
     "moves": [

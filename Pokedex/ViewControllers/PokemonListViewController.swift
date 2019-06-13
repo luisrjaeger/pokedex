@@ -14,6 +14,8 @@ class PokemonListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var activityView: UIView!
+    
     let requestMaker = RequestMaker()
     
     var pokemonList = [Pokemon]()
@@ -46,7 +48,7 @@ extension PokemonListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemon", for: indexPath)
         
         let background = UIView()
-        background.backgroundColor = (searchList[indexPath.row].types.first?.color ?? .gray).withAlphaComponent(0.1)
+        background.backgroundColor = searchList[indexPath.row].types.first?.color?.lighter() ?? .gray
         cell.selectedBackgroundView = background
         
         if let pokemonCell = cell as? PokemonTableViewCell {
@@ -62,6 +64,8 @@ extension PokemonListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") {
+            (detailViewController as? DetailViewController)?.pokemon = searchList[indexPath.row]
+            
             navigationController?.present(detailViewController, animated: true)
         }
     }
@@ -87,6 +91,7 @@ extension PokemonListViewController {
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.activityView.isHidden = true
             }
         }
     }

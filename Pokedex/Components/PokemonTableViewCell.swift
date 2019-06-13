@@ -20,18 +20,16 @@ class PokemonTableViewCell: UITableViewCell {
         pictureImageView.loadImage(from: model.image)
         
         nameLabel.text = model.name.capitalized
-        idLabel.text = " #\(model.id.leftPadding(toLength: 3, withPad: "0"))"
+        idLabel.text = String(format: "#%03d", Int(model.id) ?? 0)
         primaryType.image = model.types.first?.icon
-        (primaryType.superview as? GradientView)?.startColor = model.types.first?.color ?? .white
-        (primaryType.superview as? GradientView)?.endColor = (model.types.first?.color ?? .white).withAlphaComponent(0.5)
+        (primaryType.superview as? GradientView)?.setGradientColor(regressing: model.types.first?.color)
         
         if model.types.count > 1 {
             let type = model.types[1]
             
             secondaryType.superview?.isHidden = false
             secondaryType.image = type.icon
-            (secondaryType.superview as? GradientView)?.startColor = type.color ?? .white
-            (secondaryType.superview as? GradientView)?.endColor = (type.color ?? .white).withAlphaComponent(0.5)
+            (secondaryType.superview as? GradientView)?.setGradientColor(regressing: type.color)
         } else {
             secondaryType.superview?.isHidden = true
         }

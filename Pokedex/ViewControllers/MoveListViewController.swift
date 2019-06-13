@@ -14,6 +14,8 @@ class MoveListViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var activityView: UIView!
+    
     let requestMaker = RequestMaker()
     
     var moveList = [Move]()
@@ -88,6 +90,7 @@ extension MoveListViewController {
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.activityView.isHidden = true
             }
         }
     }

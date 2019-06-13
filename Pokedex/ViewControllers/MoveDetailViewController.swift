@@ -35,7 +35,9 @@ class MoveDetailViewController: UIViewController {
     }
     
     private func config(move: MoveDetail) {
-        if let superView = view as? GradientView { superView.setGradientColor(to: move.type.name.color) }
+        if let superView = view as? GradientView {
+            superView.setGradientColor(regressing: move.type.name.color)
+        }
         
         let icon = move.type.name.icon
         let color = move.type.name.color
@@ -43,12 +45,12 @@ class MoveDetailViewController: UIViewController {
         titleLabel.text = move.name.capitalized
         
         iconImageView.image = icon
-        (iconImageView.superview as? GradientView)?.setGradientColor(to: color)
+        (iconImageView.superview as? GradientView)?.setGradientColor(regressing: color)
         
         nameTypeLabel.text = move.type.name.rawValue.uppercased()
         
         iconTypeLabelImageView.image = icon
-        (iconTypeLabelImageView.superview as? GradientView)?.setGradientColor(to: color)
+        (iconTypeLabelImageView.superview as? GradientView)?.setGradientColor(regressing: color)
         
         descriptionLabel.text = move.effectEntries.first?.effect
         
