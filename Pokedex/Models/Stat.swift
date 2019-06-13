@@ -11,6 +11,6 @@ import Foundation
 struct Stat: Codable {
     
     let value: Int
-    let name: String
+    let name: StatName
     
 }

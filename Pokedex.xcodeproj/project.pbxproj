@@ -18,6 +18,8 @@
 		A01A5C8722ABE1B000CDA018 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A5C8622ABE1B000CDA018 /* Pokemon.swift */; };
 		A01A5C8922ABE1D100CDA018 /* PokemonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A5C8822ABE1D100CDA018 /* PokemonList.swift */; };
 		A01A5C8C22AC11F500CDA018 /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A5C8B22AC11F500CDA018 /* PokemonTableViewCell.swift */; };
+		A0272EC122B20EB300505C55 /* StatName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0272EC022B20EB300505C55 /* StatName.swift */; };
+		A0272EC322B21C5000505C55 /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0272EC222B21C5000505C55 /* NSLayoutConstraintExtension.swift */; };
 		A05FFFCF22B1E31800BD57B3 /* StatBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05FFFCE22B1E31800BD57B3 /* StatBarView.xib */; };
 		A05FFFD122B1E33700BD57B3 /* StatBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFFD022B1E33700BD57B3 /* StatBarView.swift */; };
 		A0937F2722AE20F500C81BFD /* MoveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0937F2622AE20F500C81BFD /* MoveTableViewCell.swift */; };
@@ -49,6 +51,8 @@
 		A01A5C8622ABE1B000CDA018 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		A01A5C8822ABE1D100CDA018 /* PokemonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonList.swift; sourceTree = "<group>"; };
 		A01A5C8B22AC11F500CDA018 /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
+		A0272EC022B20EB300505C55 /* StatName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatName.swift; sourceTree = "<group>"; };
+		A0272EC222B21C5000505C55 /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		A05FFFCE22B1E31800BD57B3 /* StatBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatBarView.xib; sourceTree = "<group>"; };
 		A05FFFD022B1E33700BD57B3 /* StatBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBarView.swift; sourceTree = "<group>"; };
 		A0937F2622AE20F500C81BFD /* MoveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTableViewCell.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				A01A5C8822ABE1D100CDA018 /* PokemonList.swift */,
 				A00B320222AC4C6900DB850E /* Move.swift */,
 				A0FA05BD22B12F750002ECFC /* Stat.swift */,
+				A0272EC022B20EB300505C55 /* StatName.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				A00B31F522AC20B500DB850E /* UIImageViewExtension.swift */,
 				A00B31F922AC286100DB850E /* StringExtension.swift */,
 				A0FA05BB22B126CA0002ECFC /* UIColorExtension.swift */,
+				A0272EC222B21C5000505C55 /* NSLayoutConstraintExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,12 +352,14 @@
 				A01A5C8722ABE1B000CDA018 /* Pokemon.swift in Sources */,
 				A0FA05BC22B126CA0002ECFC /* UIColorExtension.swift in Sources */,
 				A0FA05BE22B12F750002ECFC /* Stat.swift in Sources */,
+				A0272EC122B20EB300505C55 /* StatName.swift in Sources */,
 				A00B31FC22AC2F1100DB850E /* DetailViewController.swift in Sources */,
 				A01A5C8922ABE1D100CDA018 /* PokemonList.swift in Sources */,
 				A05FFFD122B1E33700BD57B3 /* StatBarView.swift in Sources */,
 				ABD8C93D22AAC4FA00AB3718 /* PokemonListViewController.swift in Sources */,
 				ABD8C94E22AAC55100AB3718 /* PokemonType.swift in Sources */,
 				A00B31FE22AC48F000DB850E /* MoveListViewController.swift in Sources */,
+				A0272EC322B21C5000505C55 /* NSLayoutConstraintExtension.swift in Sources */,
 				ABD8C95422AADA6F00AB3718 /* GradientView.swift in Sources */,
 				ABD8C95122AAD76000AB3718 /* UIViewExtensions.swift in Sources */,
 				A00B320322AC4C6900DB850E /* Move.swift in Sources */,

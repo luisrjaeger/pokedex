@@ -730,7 +730,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ol4-db-0c1" userLabel="whitepanel" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="508" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="912" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcT-CH-gTr">
                                         <rect key="frame" x="157.5" y="55" width="99.5" height="55"/>
@@ -745,8 +745,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-qA-6yu" userLabel="stats">
-                                        <rect key="frame" x="186" y="210.5" width="42.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <rect key="frame" x="185.5" y="210.5" width="43" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -758,8 +758,8 @@
                                             <constraint firstAttribute="height" constant="30" id="p4t-PU-iEB"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lNe-pH-Q24" userLabel="stackStats">
-                                        <rect key="frame" x="10" y="251" width="394" height="290"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lNe-pH-Q24" userLabel="stackStats">
+                                        <rect key="frame" x="10" y="251" width="394" height="240"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dF7-gf-4ig" userLabel="hp" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
@@ -767,41 +767,59 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="05i-1g-0E5"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="statLabel" value="HP"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yph-rq-Hse" userLabel="atk" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="394" height="40"/>
+                                                <rect key="frame" x="0.0" y="40" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="SP3-Iu-Tma"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="statLabel" value="ATK"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5C5-va-sVP" userLabel="def" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="100" width="394" height="40"/>
+                                                <rect key="frame" x="0.0" y="80" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="MmJ-7E-q0p"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="statLabel" value="DEF"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAr-TO-zc6" userLabel="satk" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="150" width="394" height="40"/>
+                                                <rect key="frame" x="0.0" y="120" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="obl-yz-Cmj"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="statLabel" value="SATK"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WV9-jA-TS6" userLabel="sdef" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="200" width="394" height="40"/>
+                                                <rect key="frame" x="0.0" y="160" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="60N-7w-Ota"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="statLabel" value="SDEF"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dI-y1-Xup" userLabel="spd" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="250" width="394" height="40"/>
+                                                <rect key="frame" x="0.0" y="200" width="394" height="40"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Aq9-2S-ZV5"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="statLabel" value="SPD"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -866,18 +884,10 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="B14-Xg-FcC"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="atk" destination="yph-rq-Hse" id="yeH-zv-2Os"/>
                         <outlet property="backButton" destination="VWH-gW-kei" id="ti1-Jd-VsZ"/>
-                        <outlet property="def" destination="5C5-va-sVP" id="bOa-uT-lBc"/>
                         <outlet property="descriptionView" destination="MAF-i3-OBJ" id="PRD-mY-JXy"/>
-                        <outlet property="hp" destination="dF7-gf-4ig" id="CWd-bE-08I"/>
                         <outlet property="imageCenterVertically" destination="Z07-Z8-Qfg" id="8K9-uh-akh"/>
                         <outlet property="imageConstraintTop" destination="Tpq-om-zaM" id="4VK-AC-SSV"/>
                         <outlet property="imageHeight" destination="273-Bn-U3a" id="aqT-lN-x55"/>
@@ -885,12 +895,15 @@
                         <outlet property="imageWidth" destination="rBZ-1N-JOh" id="EiD-6u-Dc7"/>
                         <outlet property="name" destination="VcT-CH-gTr" id="0Dh-qF-LMy"/>
                         <outlet property="pokemonTypeView" destination="gCC-GC-TAv" id="LNK-xn-YYd"/>
-                        <outlet property="satk" destination="GAr-TO-zc6" id="2pa-zT-eAu"/>
-                        <outlet property="sdef" destination="WV9-jA-TS6" id="49J-nG-pOZ"/>
-                        <outlet property="spd" destination="2dI-y1-Xup" id="S5b-Ro-m4e"/>
                         <outlet property="statLabel" destination="lWl-qA-6yu" id="kyi-EI-ALC"/>
                         <outlet property="superView" destination="Ifc-X2-JEM" id="nKK-C7-xDY"/>
                         <outlet property="whitePanelTopConstraint" destination="B14-Xg-FcC" id="i04-RU-C8o"/>
+                        <outletCollection property="statsView" destination="dF7-gf-4ig" collectionClass="NSMutableArray" id="1y4-nA-mu1"/>
+                        <outletCollection property="statsView" destination="yph-rq-Hse" collectionClass="NSMutableArray" id="nad-Pb-MqS"/>
+                        <outletCollection property="statsView" destination="5C5-va-sVP" collectionClass="NSMutableArray" id="ORL-KZ-HAW"/>
+                        <outletCollection property="statsView" destination="GAr-TO-zc6" collectionClass="NSMutableArray" id="Riv-jN-tey"/>
+                        <outletCollection property="statsView" destination="WV9-jA-TS6" collectionClass="NSMutableArray" id="DKr-aC-375"/>
+                        <outletCollection property="statsView" destination="2dI-y1-Xup" collectionClass="NSMutableArray" id="55d-kV-F4g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DUe-yI-Xv7" userLabel="First Responder" sceneMemberID="firstResponder"/>

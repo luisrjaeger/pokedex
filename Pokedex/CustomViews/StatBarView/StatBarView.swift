@@ -18,6 +18,11 @@ class StatBarView: UIView {
     
     @IBOutlet weak var value: UILabel!
     
+    @IBOutlet weak var barContent: GradientView!
+    @IBOutlet weak var barContentConstraint: NSLayoutConstraint!
+    
+    @IBInspectable var statLabel: String = ""
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -33,9 +38,19 @@ class StatBarView: UIView {
         contentView.fixInView(self)
     }
     
-    func config(stat: Stat) {
-        name.text = stat.name.uppercased()
-        value.text = String(format: "%03d", stat.value)
+    func config(stat: Stat?, color: UIColor?) {
+        if let stat = stat {
+            name.text = statLabel
+            value.text = String(format: "%03d", stat.value)            
+        }
+        
+        name.textColor = color
+        barContent.setGradientColor(progressing: color)
+        
+        UIView.animate(withDuration: 1, delay: 1, animations: {
+            self.barContentConstraint.priority = UILayoutPriority(rawValue: 949)
+            self.layoutIfNeeded()
+        }, completion: nil)
     }
     
 }

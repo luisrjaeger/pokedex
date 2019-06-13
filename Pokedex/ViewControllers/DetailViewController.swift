@@ -23,12 +23,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageConstraintTop: NSLayoutConstraint!
     @IBOutlet weak var whitePanelTopConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var hp: StatBarView!
-    @IBOutlet weak var atk: StatBarView!
-    @IBOutlet weak var def: StatBarView!
-    @IBOutlet weak var satk: StatBarView!
-    @IBOutlet weak var sdef: StatBarView!
-    @IBOutlet weak var spd: StatBarView!
+//    @IBOutlet weak var hp: StatBarView!
+//    @IBOutlet weak var atk: StatBarView!
+//    @IBOutlet weak var def: StatBarView!
+//    @IBOutlet weak var satk: StatBarView!
+//    @IBOutlet weak var sdef: StatBarView!
+//    @IBOutlet weak var spd: StatBarView!
+    
+    @IBOutlet var statsView: [StatBarView]!
     
     let requestMaker: RequestMaker = RequestMaker()
     
@@ -37,6 +39,7 @@ class DetailViewController: UIViewController {
     }
     
     var pokemon: Pokemon?
+    var color: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +77,7 @@ class DetailViewController: UIViewController {
     
     func config() {
         if let pokemon = self.pokemon {
-            let color = pokemon.types.first?.color
+            color = pokemon.types.first?.color
             
             superView.setGradientColor(regressing: color)
             imageView.loadImage(from: pokemon.image)
@@ -86,6 +89,25 @@ class DetailViewController: UIViewController {
     
     func configStats() {
         descriptionView.text = pokemon?.description//?.removingAllNewlines
+        
+        if let stats = pokemon?.stats {
+            for stat in stats {
+                switch stat.name {
+                case .hp:
+                    statsView[0].config(stat: stat, color: color)
+                case .atk:
+                    statsView[1].config(stat: stat, color: color)
+                case .def:
+                    statsView[2].config(stat: stat, color: color)
+                case .satk:
+                    statsView[3].config(stat: stat, color: color)
+                case .sdef:
+                    statsView[4].config(stat: stat, color: color)
+                case .spd:
+                    statsView[5].config(stat: stat, color: color)
+                }
+            }
+        }
     }
     
 }
