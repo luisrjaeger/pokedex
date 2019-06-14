@@ -11,16 +11,11 @@ import UIKit
 class MoveTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var type: UIImageView!
+    @IBOutlet weak var typeView: TypeView!
 
-    func config(with model: Move) {
-        nameLabel.text = model.name.capitalized
-        
-        type.image = model.type.icon
-        if let superView = type.superview as? GradientView {
-            superView.setGradientColor(regressing: model.type.color)
-            superView.setShadow(color: model.type.color)
-        }
+    func config(with move: Move) {
+        nameLabel.text = move.name.capitalized
+        typeView.config(type: move.type)
     }
     
 }

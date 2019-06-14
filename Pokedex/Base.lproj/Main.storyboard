@@ -102,24 +102,13 @@
                                                         <constraint firstItem="ucG-65-H5H" firstAttribute="leading" secondItem="zyz-1S-oLr" secondAttribute="leading" id="hLf-aw-qov"/>
                                                     </constraints>
                                                 </view>
-                                                <view verifyAmbiguity="off" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-ng-5BO" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
+                                                <view verifyAmbiguity="off" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-ng-5BO" customClass="TypeView" customModule="Pokedex" customModuleProvider="target">
                                                     <rect key="frame" x="359" y="18" width="40" height="40"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bug" translatesAutoresizingMaskIntoConstraints="NO" id="PLI-RA-xsj">
-                                                            <rect key="frame" x="13" y="11.5" width="14" height="17"/>
-                                                        </imageView>
-                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="JfB-4s-GPr"/>
                                                         <constraint firstAttribute="height" constant="40" id="QQ0-AW-mZ9"/>
-                                                        <constraint firstItem="PLI-RA-xsj" firstAttribute="centerY" secondItem="giQ-ng-5BO" secondAttribute="centerY" id="VPX-fh-Ke2"/>
-                                                        <constraint firstItem="PLI-RA-xsj" firstAttribute="centerX" secondItem="giQ-ng-5BO" secondAttribute="centerX" id="jEc-fc-L0G"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="20"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -133,7 +122,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="ucG-65-H5H" id="xpI-rT-Dup"/>
-                                            <outlet property="type" destination="PLI-RA-xsj" id="Hoq-JI-Ore"/>
+                                            <outlet property="typeView" destination="giQ-ng-5BO" id="En0-nA-BL3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -565,16 +554,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="VvU-6W-mpW" userLabel="names">
-                                                    <rect key="frame" x="88" y="28" width="136" height="42"/>
+                                                    <rect key="frame" x="88" y="28" width="226" height="42"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB4-bX-Y2j">
-                                                            <rect key="frame" x="0.0" y="0.0" width="136" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="226" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYf-fT-kwP">
-                                                            <rect key="frame" x="0.0" y="21.5" width="136" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="21.5" width="226" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                             <color key="textColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -582,51 +571,19 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WBt-uF-Vjg" userLabel="types">
-                                                    <rect key="frame" x="224" y="29" width="175" height="40"/>
+                                                    <rect key="frame" x="314" y="29" width="85" height="40"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIk-PR-br4" customClass="TypeView" customModule="Pokedex" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="MD3-lG-jch"/>
+                                                                <constraint firstAttribute="width" constant="40" id="MR0-0Z-AVP"/>
+                                                            </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6JO-wQ-fhH" customClass="TypeView" customModule="Pokedex" customModuleProvider="target">
                                                             <rect key="frame" x="45" y="0.0" width="40" height="40"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8od-a9-IEf" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
-                                                            <rect key="frame" x="90" y="0.0" width="40" height="40"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bug" translatesAutoresizingMaskIntoConstraints="NO" id="vO1-AY-j9t">
-                                                                    <rect key="frame" x="13" y="11.5" width="14" height="17"/>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="vO1-AY-j9t" firstAttribute="centerX" secondItem="8od-a9-IEf" secondAttribute="centerX" id="1nT-wj-EeV"/>
-                                                                <constraint firstItem="vO1-AY-j9t" firstAttribute="centerY" secondItem="8od-a9-IEf" secondAttribute="centerY" id="ClB-qC-daY"/>
-                                                                <constraint firstAttribute="height" constant="40" id="VBl-Uo-EST"/>
-                                                                <constraint firstAttribute="width" constant="40" id="jii-PJ-cVA"/>
-                                                            </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="20"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQ3-iD-lKd" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
-                                                            <rect key="frame" x="135" y="0.0" width="40" height="40"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dark" translatesAutoresizingMaskIntoConstraints="NO" id="YxX-6h-ngf">
-                                                                    <rect key="frame" x="13" y="13" width="14" height="14"/>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="YxX-6h-ngf" firstAttribute="centerX" secondItem="RQ3-iD-lKd" secondAttribute="centerX" id="VZG-rc-pfZ"/>
-                                                                <constraint firstItem="YxX-6h-ngf" firstAttribute="centerY" secondItem="RQ3-iD-lKd" secondAttribute="centerY" id="iZm-zo-aOh"/>
-                                                            </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="20"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
                                                 </stackView>
@@ -645,9 +602,7 @@
                                             <outlet property="idLabel" destination="tYf-fT-kwP" id="84Y-Jq-Cma"/>
                                             <outlet property="nameLabel" destination="pB4-bX-Y2j" id="uRL-G9-7gZ"/>
                                             <outlet property="pictureImageView" destination="57l-7h-9gL" id="U5R-tQ-Ug1"/>
-                                            <outlet property="primaryType" destination="vO1-AY-j9t" id="LX7-bD-UBp"/>
                                             <outlet property="primaryTypeView" destination="cIk-PR-br4" id="D8l-iX-wDm"/>
-                                            <outlet property="secondaryType" destination="YxX-6h-ngf" id="zRk-dq-ygd"/>
                                             <outlet property="secondaryTypeView" destination="6JO-wQ-fhH" id="SlB-dO-DA0"/>
                                         </connections>
                                     </tableViewCell>
@@ -913,7 +868,6 @@
         <image name="ballshadow" width="26" height="26"/>
         <image name="candyshadow" width="28" height="28"/>
         <image name="ic_bug" width="14" height="17"/>
-        <image name="ic_dark" width="14" height="14"/>
         <image name="ic_path" width="21" height="12"/>
         <image name="pikashadow" width="50" height="50"/>
         <image name="pikashadow28" width="28" height="28"/>
