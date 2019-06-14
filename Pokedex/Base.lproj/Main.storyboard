@@ -294,14 +294,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="jxc-JO-5pI" firstAttribute="centerX" secondItem="092-L0-S8U" secondAttribute="centerX" id="GPs-oA-Fzl"/>
-                                    <constraint firstItem="jxc-JO-5pI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="092-L0-S8U" secondAttribute="leading" id="GaJ-M1-ekg"/>
+                                    <constraint firstItem="jxc-JO-5pI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="092-L0-S8U" secondAttribute="leading" constant="15" id="GaJ-M1-ekg"/>
                                     <constraint firstItem="jxc-JO-5pI" firstAttribute="top" secondItem="Wtp-Rd-vbh" secondAttribute="bottom" constant="20" id="NgM-qw-1C5"/>
                                     <constraint firstItem="gYm-He-LsF" firstAttribute="top" secondItem="092-L0-S8U" secondAttribute="top" constant="55" id="OUU-LK-aOh"/>
                                     <constraint firstItem="Wtp-Rd-vbh" firstAttribute="top" secondItem="gYm-He-LsF" secondAttribute="bottom" constant="10" id="Syk-23-Rl5"/>
                                     <constraint firstItem="Wtp-Rd-vbh" firstAttribute="centerX" secondItem="092-L0-S8U" secondAttribute="centerX" id="Z7p-zV-anB"/>
                                     <constraint firstItem="p1S-Ku-RuX" firstAttribute="centerX" secondItem="092-L0-S8U" secondAttribute="centerX" id="eX8-M8-wIc"/>
                                     <constraint firstItem="gYm-He-LsF" firstAttribute="centerX" secondItem="092-L0-S8U" secondAttribute="centerX" id="wvA-NM-ldG"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jxc-JO-5pI" secondAttribute="trailing" id="xPv-yb-6tK"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jxc-JO-5pI" secondAttribute="trailing" constant="15" id="xPv-yb-6tK"/>
                                     <constraint firstItem="p1S-Ku-RuX" firstAttribute="top" secondItem="jxc-JO-5pI" secondAttribute="bottom" constant="35" id="xcA-5M-i3c"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -633,7 +633,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWH-gW-kei">
-                                <rect key="frame" x="16" y="60" width="16" height="22"/>
+                                <rect key="frame" x="16" y="60" width="21" height="22"/>
                                 <state key="normal" image="ic_path"/>
                                 <connections>
                                     <action selector="backAction" destination="9QE-PC-tBb" eventType="touchUpInside" id="m7V-BF-uvC"/>

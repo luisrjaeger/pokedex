@@ -55,7 +55,9 @@ class MoveDetailViewController: UIViewController {
         
         pokemonType.config(type: move.type.name)
         
-        descriptionLabel.text = move.effectEntries.first?.effect
+        if let description = move.effectEntries.first?.effect {
+            descriptionLabel.text = description.replacingOccurrences(of: "$effect_chance%", with: String(move.effectChance ?? 0))
+        }
         
         powerTitleLabel.textColor = color
         accuracyTitleLabel.textColor = color
@@ -72,14 +74,6 @@ class MoveDetailViewController: UIViewController {
         }
         
         typeView.config(type: move.type)
-        
-//        iconImageView.image = move.type.icon
-//
-//        if let superView = iconImageView.superview as? GradientView {
-//            superView.setGradientColor(regressing: move.type.color)
-//            superView.setShadow(color: move.type.color)
-//        }
-        
     }
     
 }

@@ -26,6 +26,7 @@ class PokemonTableViewCell: UITableViewCell {
         
         if model.types.count > 1 {
             let type = model.types[1]
+            secondaryTypeView.isHidden = false
             secondaryTypeView.config(type: type)
         } else {
             secondaryTypeView.isHidden = true
