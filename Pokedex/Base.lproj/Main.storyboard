@@ -565,16 +565,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="VvU-6W-mpW" userLabel="names">
-                                                    <rect key="frame" x="88" y="28" width="226" height="42"/>
+                                                    <rect key="frame" x="88" y="28" width="136" height="42"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB4-bX-Y2j">
-                                                            <rect key="frame" x="0.0" y="0.0" width="226" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="136" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYf-fT-kwP">
-                                                            <rect key="frame" x="0.0" y="21.5" width="226" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="21.5" width="136" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                             <color key="textColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -582,10 +582,18 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WBt-uF-Vjg" userLabel="types">
-                                                    <rect key="frame" x="314" y="29" width="85" height="40"/>
+                                                    <rect key="frame" x="224" y="29" width="175" height="40"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8od-a9-IEf" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIk-PR-br4" customClass="TypeView" customModule="Pokedex" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6JO-wQ-fhH" customClass="TypeView" customModule="Pokedex" customModuleProvider="target">
+                                                            <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8od-a9-IEf" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
+                                                            <rect key="frame" x="90" y="0.0" width="40" height="40"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bug" translatesAutoresizingMaskIntoConstraints="NO" id="vO1-AY-j9t">
                                                                     <rect key="frame" x="13" y="11.5" width="14" height="17"/>
@@ -604,7 +612,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQ3-iD-lKd" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
-                                                            <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                                            <rect key="frame" x="135" y="0.0" width="40" height="40"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dark" translatesAutoresizingMaskIntoConstraints="NO" id="YxX-6h-ngf">
                                                                     <rect key="frame" x="13" y="13" width="14" height="14"/>
@@ -638,7 +646,9 @@
                                             <outlet property="nameLabel" destination="pB4-bX-Y2j" id="uRL-G9-7gZ"/>
                                             <outlet property="pictureImageView" destination="57l-7h-9gL" id="U5R-tQ-Ug1"/>
                                             <outlet property="primaryType" destination="vO1-AY-j9t" id="LX7-bD-UBp"/>
+                                            <outlet property="primaryTypeView" destination="cIk-PR-br4" id="D8l-iX-wDm"/>
                                             <outlet property="secondaryType" destination="YxX-6h-ngf" id="zRk-dq-ygd"/>
+                                            <outlet property="secondaryTypeView" destination="6JO-wQ-fhH" id="SlB-dO-DA0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

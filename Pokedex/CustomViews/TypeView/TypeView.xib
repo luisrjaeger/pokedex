@@ -12,15 +12,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TypeView" customModule="Pokedex" customModuleProvider="target">
             <connections>
+                <outlet property="circleView" destination="kg4-su-fue" id="TAU-mw-jhM"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="w9x-os-ZaS"/>
+                <outlet property="iconView" destination="l1R-Rc-XYo" id="K5T-jw-fZE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kg4-su-fue" userLabel="Circle View" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
+                    <rect key="frame" x="80" y="80" width="40" height="40"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bug" translatesAutoresizingMaskIntoConstraints="NO" id="l1R-Rc-XYo">
+                            <rect key="frame" x="13" y="11.5" width="14" height="17"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="l1R-Rc-XYo" firstAttribute="centerY" secondItem="kg4-su-fue" secondAttribute="centerY" id="06N-X7-N0H"/>
+                        <constraint firstItem="l1R-Rc-XYo" firstAttribute="centerX" secondItem="kg4-su-fue" secondAttribute="centerX" id="5OZ-L9-HhQ"/>
+                        <constraint firstAttribute="height" constant="40" id="G8x-3h-jrT"/>
+                        <constraint firstAttribute="width" constant="40" id="XYK-fm-CNx"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="kg4-su-fue" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IIp-QU-Pbz"/>
+                <constraint firstItem="kg4-su-fue" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dZW-n1-map"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_bug" width="14" height="17"/>
+    </resources>
 </document>

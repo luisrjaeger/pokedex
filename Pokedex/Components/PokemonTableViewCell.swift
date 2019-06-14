@@ -15,18 +15,22 @@ class PokemonTableViewCell: UITableViewCell {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var primaryType: UIImageView!
     @IBOutlet weak var secondaryType: UIImageView!
+    @IBOutlet weak var primaryTypeView: TypeView!
+    @IBOutlet weak var secondaryTypeView: TypeView!
 
     func config(with model: Pokemon) {
         pictureImageView.loadImage(from: model.image)
         
         nameLabel.text = model.name.capitalized
         idLabel.text = String(format: "#%03d", model.id)
-        primaryType.image = model.types.first?.icon
+//        primaryType.image = model.types.first?.icon
         
-        if let superView = primaryType.superview as? GradientView {
-            superView.setGradientColor(regressing: model.types.first?.color)
-            superView.setShadow(color: model.types.first?.color)
-        }
+//        if let superView = primaryType.superview as? GradientView {
+//            superView.setGradientColor(regressing: model.types.first?.color)
+//            superView.setShadow(color: model.types.first?.color)
+//
+//        }
+        primaryTypeView.config(type: model.types.first)
 
         
         if model.types.count > 1 {
@@ -34,12 +38,15 @@ class PokemonTableViewCell: UITableViewCell {
             
             secondaryType.superview?.isHidden = false
             secondaryType.image = type.icon
-            if let superView = secondaryType.superview as? GradientView {
-                superView.setGradientColor(regressing: type.color)
-                superView.setShadow(color: type.color)
-            }
+//            if let superView = secondaryType.superview as? GradientView {
+//                superView.setGradientColor(regressing: type.color)
+//                superView.setShadow(color: type.color)
+//
+//            }
+            secondaryTypeView.config(type: type)
         } else {
-            secondaryType.superview?.isHidden = true
+            secondaryTypeView.isHidden = true
+//            secondaryType.superview?.isHidden = true
         }
         
     }

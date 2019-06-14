@@ -14,6 +14,9 @@ class TypeView: UIView {
     
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet weak var circleView: GradientView!
+    @IBOutlet weak var iconView: UIImageView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -31,7 +34,10 @@ class TypeView: UIView {
     
     func config(type: PokemonType?) {
         if let type = type {
+            circleView.setGradientColor(regressing: type.color)
+            circleView.setShadow(color: type.color)
             
+            iconView.image = type.icon
         }
     }
     
