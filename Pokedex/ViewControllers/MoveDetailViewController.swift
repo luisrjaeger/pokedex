@@ -14,7 +14,7 @@ class MoveDetailViewController: UIViewController {
     
     let requestMaker = RequestMaker()
     
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var typeView: TypeView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pokemonType: PokemonTypeView!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -71,12 +71,14 @@ class MoveDetailViewController: UIViewController {
             superView.setGradientColor(regressing: move.type.color)
         }
         
-        iconImageView.image = move.type.icon
+        typeView.config(type: move.type)
         
-        if let superView = iconImageView.superview as? GradientView {
-            superView.setGradientColor(regressing: move.type.color)
-            superView.setShadow(color: move.type.color)
-        }
+//        iconImageView.image = move.type.icon
+//
+//        if let superView = iconImageView.superview as? GradientView {
+//            superView.setGradientColor(regressing: move.type.color)
+//            superView.setShadow(color: move.type.color)
+//        }
         
     }
     

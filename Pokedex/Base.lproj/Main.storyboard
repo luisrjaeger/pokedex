@@ -316,42 +316,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-mb-fJK" userLabel="bigicon-out" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-mb-fJK" userLabel="type" customClass="TypeView" customModule="Pokedex" customModuleProvider="target">
                                 <rect key="frame" x="169.5" y="410.5" width="75" height="75"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgZ-aY-mAE" userLabel="bigicon" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bug" translatesAutoresizingMaskIntoConstraints="NO" id="hwT-RD-8K7">
-                                                <rect key="frame" x="18" y="18" width="39" height="39"/>
-                                            </imageView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="hwT-RD-8K7" firstAttribute="top" secondItem="fgZ-aY-mAE" secondAttribute="top" constant="18" id="Pf3-NT-Wst"/>
-                                            <constraint firstAttribute="trailing" secondItem="hwT-RD-8K7" secondAttribute="trailing" constant="18" id="bxq-Db-NIP"/>
-                                            <constraint firstAttribute="bottom" secondItem="hwT-RD-8K7" secondAttribute="bottom" constant="18" id="iBe-LS-NgL"/>
-                                            <constraint firstItem="hwT-RD-8K7" firstAttribute="leading" secondItem="fgZ-aY-mAE" secondAttribute="leading" constant="18" id="zHN-oQ-Syi"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="35"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
                                 <constraints>
-                                    <constraint firstItem="fgZ-aY-mAE" firstAttribute="leading" secondItem="Og8-mb-fJK" secondAttribute="leading" id="1Bf-MZ-diQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="fgZ-aY-mAE" secondAttribute="trailing" id="FgR-Lo-i3a"/>
                                     <constraint firstAttribute="height" constant="75" id="G4W-om-eEu"/>
-                                    <constraint firstItem="fgZ-aY-mAE" firstAttribute="centerY" secondItem="Og8-mb-fJK" secondAttribute="centerY" id="bVv-bn-5SW"/>
                                     <constraint firstAttribute="width" constant="75" id="cII-eg-I4g"/>
-                                    <constraint firstAttribute="bottom" secondItem="fgZ-aY-mAE" secondAttribute="bottom" id="oYR-Ub-NbZ"/>
-                                    <constraint firstItem="fgZ-aY-mAE" firstAttribute="top" secondItem="Og8-mb-fJK" secondAttribute="top" id="qJl-Cr-tkc"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="startColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
@@ -389,7 +360,6 @@
                         <outlet property="accuracyLabel" destination="6vW-dg-KRJ" id="qvB-Bv-6L8"/>
                         <outlet property="accuracyTitleLabel" destination="Ild-9C-avI" id="brV-Y3-9Um"/>
                         <outlet property="descriptionLabel" destination="jxc-JO-5pI" id="mNG-Jp-4Yv"/>
-                        <outlet property="iconImageView" destination="hwT-RD-8K7" id="Zxu-SQ-ijC"/>
                         <outlet property="imageCenterVertically" destination="C1n-Lq-ALk" id="1xH-Ut-aNf"/>
                         <outlet property="pokemonType" destination="Wtp-Rd-vbh" id="k1a-Yf-jtK"/>
                         <outlet property="powerLabel" destination="9c6-SQ-uua" id="5j5-L0-c6w"/>
@@ -397,6 +367,7 @@
                         <outlet property="ppLabel" destination="Ent-RT-Eq3" id="Fr7-Df-YpJ"/>
                         <outlet property="ppTitleLabel" destination="JBV-wD-JGT" id="qYG-w2-rKE"/>
                         <outlet property="titleLabel" destination="gYm-He-LsF" id="1H8-oZ-xvQ"/>
+                        <outlet property="typeView" destination="Og8-mb-fJK" id="sdF-rb-3Iv"/>
                         <outlet property="whitePanelTopConstraint" destination="FUg-pE-uuu" id="W7R-dy-v4E"/>
                     </connections>
                 </viewController>
@@ -662,7 +633,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWH-gW-kei">
-                                <rect key="frame" x="16" y="60" width="21" height="22"/>
+                                <rect key="frame" x="16" y="60" width="16" height="22"/>
                                 <state key="normal" image="ic_path"/>
                                 <connections>
                                     <action selector="backAction" destination="9QE-PC-tBb" eventType="touchUpInside" id="m7V-BF-uvC"/>
@@ -867,7 +838,6 @@
         <image name="background" width="375" height="812"/>
         <image name="ballshadow" width="26" height="26"/>
         <image name="candyshadow" width="28" height="28"/>
-        <image name="ic_bug" width="14" height="17"/>
         <image name="ic_path" width="21" height="12"/>
         <image name="pikashadow" width="50" height="50"/>
         <image name="pikashadow28" width="28" height="28"/>
