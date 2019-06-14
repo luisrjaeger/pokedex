@@ -64,7 +64,7 @@ extension MoveListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "MoveDetailViewController") as? MoveDetailViewController {
-            detailViewController.moveName = searchList[indexPath.row].name
+            detailViewController.move = searchList[indexPath.row]
             navigationController?.present(detailViewController, animated: true)
         }
     }

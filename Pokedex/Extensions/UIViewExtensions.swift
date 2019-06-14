@@ -35,5 +35,16 @@ extension UIView {
         NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: container, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
     }
+
+    func setShadow(color: UIColor?) {
+        if let color = color {
+            self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+            self.layer.shadowColor = color.cgColor
+            self.layer.shadowOpacity = 0.8
+            self.layer.shadowOffset = CGSize(width: 0, height: 1)
+            self.layer.shadowRadius = 10
+            self.layer.masksToBounds = false
+        }
+    }
     
 }

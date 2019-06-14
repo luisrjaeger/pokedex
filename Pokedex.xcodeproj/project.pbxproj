@@ -23,6 +23,8 @@
 		A05FFFCF22B1E31800BD57B3 /* StatBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05FFFCE22B1E31800BD57B3 /* StatBarView.xib */; };
 		A05FFFD122B1E33700BD57B3 /* StatBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFFD022B1E33700BD57B3 /* StatBarView.swift */; };
 		A0937F2722AE20F500C81BFD /* MoveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0937F2622AE20F500C81BFD /* MoveTableViewCell.swift */; };
+		A0A08F5F22B3482A00B04EC0 /* TypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A08F5E22B3482A00B04EC0 /* TypeView.xib */; };
+		A0A08F6122B3483F00B04EC0 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A08F6022B3483F00B04EC0 /* TypeView.swift */; };
 		A0B0407A22AEA9C8008634AE /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B0407922AEA9C8008634AE /* CustomSearchBar.swift */; };
 		A0B0407C22AEC7CD008634AE /* MoveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B0407B22AEC7CD008634AE /* MoveDetailViewController.swift */; };
 		A0FA05BC22B126CA0002ECFC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA05BB22B126CA0002ECFC /* UIColorExtension.swift */; };
@@ -56,6 +58,8 @@
 		A05FFFCE22B1E31800BD57B3 /* StatBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatBarView.xib; sourceTree = "<group>"; };
 		A05FFFD022B1E33700BD57B3 /* StatBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBarView.swift; sourceTree = "<group>"; };
 		A0937F2622AE20F500C81BFD /* MoveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTableViewCell.swift; sourceTree = "<group>"; };
+		A0A08F5E22B3482A00B04EC0 /* TypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeView.xib; sourceTree = "<group>"; };
+		A0A08F6022B3483F00B04EC0 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		A0B0407922AEA9C8008634AE /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		A0B0407B22AEC7CD008634AE /* MoveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDetailViewController.swift; sourceTree = "<group>"; };
 		A0FA05BB22B126CA0002ECFC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -135,6 +139,15 @@
 			path = StatBarView;
 			sourceTree = "<group>";
 		};
+		A0A08F5D22B3430A00B04EC0 /* TypeView */ = {
+			isa = PBXGroup;
+			children = (
+				A0A08F5E22B3482A00B04EC0 /* TypeView.xib */,
+				A0A08F6022B3483F00B04EC0 /* TypeView.swift */,
+			);
+			path = TypeView;
+			sourceTree = "<group>";
+		};
 		A0FA05BF22B140E60002ECFC /* PokemonTypeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +221,7 @@
 		ABD8C95222AADA6200AB3718 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				A0A08F5D22B3430A00B04EC0 /* TypeView */,
 				A05FFFCD22B1E2DA00BD57B3 /* StatBarView */,
 				A0FA05BF22B140E60002ECFC /* PokemonTypeView */,
 				ABD8C95322AADA6F00AB3718 /* GradientView.swift */,
@@ -284,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A08F5F22B3482A00B04EC0 /* TypeView.xib in Resources */,
 				ABD8C94522AAC4FC00AB3718 /* LaunchScreen.storyboard in Resources */,
 				ABD8C94222AAC4FC00AB3718 /* Assets.xcassets in Resources */,
 				A0FA05C322B141660002ECFC /* PokemonTypeView.xib in Resources */,
@@ -356,6 +371,7 @@
 				A00B31FC22AC2F1100DB850E /* DetailViewController.swift in Sources */,
 				A01A5C8922ABE1D100CDA018 /* PokemonList.swift in Sources */,
 				A05FFFD122B1E33700BD57B3 /* StatBarView.swift in Sources */,
+				A0A08F6122B3483F00B04EC0 /* TypeView.swift in Sources */,
 				ABD8C93D22AAC4FA00AB3718 /* PokemonListViewController.swift in Sources */,
 				ABD8C94E22AAC55100AB3718 /* PokemonType.swift in Sources */,
 				A00B31FE22AC48F000DB850E /* MoveListViewController.swift in Sources */,

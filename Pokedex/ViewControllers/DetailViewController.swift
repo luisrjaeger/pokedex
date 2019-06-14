@@ -15,12 +15,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var pokemonTypeView: PokemonTypeView!
+    @IBOutlet weak var pokemonTypeView2: PokemonTypeView!
     @IBOutlet weak var descriptionView: UILabel!
     @IBOutlet weak var statLabel: UILabel!
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
     @IBOutlet weak var imageWidth: NSLayoutConstraint!
     @IBOutlet weak var imageCenterVertically: NSLayoutConstraint!
-    @IBOutlet weak var imageConstraintTop: NSLayoutConstraint!
     @IBOutlet weak var whitePanelTopConstraint: NSLayoutConstraint!
     
 //    @IBOutlet weak var hp: StatBarView!
@@ -48,6 +48,15 @@ class DetailViewController: UIViewController {
         fetchData()
         if let type = pokemon?.types.first {
             pokemonTypeView.config(type: type)
+        }
+        
+        guard pokemon?.types.count ?? 0 > 1 else {
+            return
+        }
+        
+        if let type = pokemon?.types[1] {
+            pokemonTypeView2.isHidden = false
+            pokemonTypeView2.config(type: type)
         }
     }
     
@@ -116,7 +125,7 @@ extension DetailViewController {
     
     func fetchData() {
         if let pokemon = self.pokemon {
-            requestMaker.make(withEndpoint: .details(query: pokemon.id)) {
+            requestMaker.make(withEndpoint: .details(query: String(pokemon.id))) {
                 (pokemon: Pokemon) in
                 
                 self.pokemon = pokemon

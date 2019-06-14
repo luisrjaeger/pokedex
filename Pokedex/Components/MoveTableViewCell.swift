@@ -17,7 +17,10 @@ class MoveTableViewCell: UITableViewCell {
         nameLabel.text = model.name.capitalized
         
         type.image = model.type.icon
-        (type.superview as? GradientView)?.setGradientColor(regressing: model.type.color)
+        if let superView = type.superview as? GradientView {
+            superView.setGradientColor(regressing: model.type.color)
+            superView.setShadow(color: model.type.color)
+        }
     }
     
 }

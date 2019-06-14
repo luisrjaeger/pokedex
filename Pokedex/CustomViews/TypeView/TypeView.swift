@@ -1,22 +1,18 @@
 //
-//  PokemonTypeView.swift
+//  TypeView.swift
 //  Pokedex
 //
-//  Created by Luís Ricardo Jaeger on 12/06/19.
+//  Created by Luís Ricardo Jaeger on 14/06/19.
 //  Copyright © 2019 CWI Software. All rights reserved.
 //
 
 import UIKit
 
-class PokemonTypeView: UIView {
+class TypeView: UIView {
     
-    let nibName = "PokemonTypeView"
+    let nibName = "TypeView"
     
     @IBOutlet var contentView: UIView!
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var labelView: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,11 +29,10 @@ class PokemonTypeView: UIView {
         contentView.fixInView(self)
     }
     
-    func config(type: PokemonType) {
-        imageView.image = type.icon
-        labelView.text = type.rawValue.uppercased()
-        contentView.backgroundColor = type.color
-        contentView.setShadow(color: type.color)
+    func config(type: PokemonType?) {
+        if let type = type {
+            
+        }
     }
     
 }

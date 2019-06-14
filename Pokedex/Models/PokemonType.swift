@@ -14,7 +14,7 @@ enum PokemonType: String, Codable {
     case dragon
     case electric
     case fairy
-    case fight
+    case fighting
     case fire
     case flying
     case ghost
