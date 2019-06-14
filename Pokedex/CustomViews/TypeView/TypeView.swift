@@ -30,6 +30,8 @@ class TypeView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(nibName, owner: self, options: nil)
         contentView.fixInView(self)
+        circleView.fixInView(contentView)
+        circleView.cornerRadius = contentView.frame.width / 2
     }
     
     func config(type: PokemonType?) {
@@ -39,6 +41,7 @@ class TypeView: UIView {
             
             iconView.image = type.icon
         }
+        //layoutIfNeeded()
     }
     
 }
