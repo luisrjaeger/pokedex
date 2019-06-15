@@ -12,11 +12,32 @@ class PokemonListPresenter: NSObject {
     
     weak var view: PokemonListViewType?
     
-    private let requestMaker = RequestMaker()
+    private lazy var interactor: PokemonListInteractorInput = PokemonListInteractor(output: self)
     
     private var pokemonList = [Pokemon]()
     
     private var searchList = [Pokemon]()
+    
+    private let idKey = "favorite.ids"
+    
+    override init() {
+        super.init()
+        
+        if let data = UserDefaults.standard.array(forKey: idKey) as? [Int] {
+            favoriteIds = Set(data)
+        }
+    }
+    
+    private var favoriteIds = Set<Int>() {
+        didSet {
+            print(favoriteIds)
+            UserDefaults.standard.set(Array(favoriteIds), forKey: idKey)
+        }
+    }
+    
+    func fetchData() {
+        interactor.fetchData()
+    }
     
     func pokemon(at index: Int) -> Pokemon {
         return searchList[index]
@@ -24,6 +45,21 @@ class PokemonListPresenter: NSObject {
     
     func filterPokemons(with text: String) {
         searchList = pokemonList.filter({ $0.name.lowercased().prefix(text.count) == text.lowercased() })
+    }
+    
+    func swipe(at index: Int) {
+        let pokemonId = pokemon(at: index).id
+        
+        guard favoriteIds.contains(pokemonId) else {
+            favoriteIds.insert(pokemonId)
+            return
+        }
+        
+        favoriteIds.remove(pokemonId)
+    }
+    
+    func swipeAction(for index: Int) -> PokemonSwipeAction {
+        return favoriteIds.contains(pokemon(at: index).id) ? .removeFavorite : .addFavorite
     }
     
 }
@@ -50,17 +86,14 @@ extension PokemonListPresenter: UITableViewDataSource {
     
 }
 
-extension PokemonListPresenter {
+extension PokemonListPresenter: PokemonListInteractorOutput {
     
-    func fetchData() {
-        requestMaker.make(withEndpoint: .list) {
-            (pokemonList: PokemonList) in
-            self.pokemonList = pokemonList.pokemons
-            self.searchList = pokemonList.pokemons
-            
-            DispatchQueue.main.async {
-                self.view?.reloadData()
-            }
+    func dataFetched(_ data: PokemonList) {
+        self.pokemonList = data.pokemons
+        self.searchList = data.pokemons
+
+        DispatchQueue.main.async {
+            self.view?.reloadData()
         }
     }
     

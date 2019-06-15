@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol PokemonListViewType: AnyObject {
-    func reloadData()
-}
-
 class PokemonListViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -49,6 +45,29 @@ extension PokemonListViewController: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let actionType = presenter.swipeAction(for: indexPath.row)
+        
+        let contextualAction = UIContextualAction(style: .normal, title: actionType.text) { (action, view, handler) in
+            
+            self.presenter.swipe(at: indexPath.row)
+            
+            handler(true)
+        }
+        
+        contextualAction.backgroundColor = actionType.color
+        contextualAction.image = .pikachu
+        
+        let configuration = UISwipeActionsConfiguration(actions: [contextualAction])
+        
+        return configuration
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return .init()
+    }
+    
 }
 
 extension PokemonListViewController: UISearchBarDelegate {
@@ -65,6 +84,30 @@ extension PokemonListViewController: PokemonListViewType {
     func reloadData() {
         self.tableView.reloadData()
         self.activityView.isHidden = true
+    }
+    
+}
+
+enum PokemonSwipeAction {
+    
+    case addFavorite, removeFavorite
+    
+    var text: String {
+        switch self {
+        case .addFavorite:
+            return "Favorite"
+        case .removeFavorite:
+            return "Remove"
+        }
+    }
+    
+    var color: UIColor {
+        switch self {
+        case .addFavorite:
+            return .purple
+        case .removeFavorite:
+            return .red
+        }
     }
     
 }
