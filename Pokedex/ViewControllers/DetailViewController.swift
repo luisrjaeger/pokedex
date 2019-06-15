@@ -43,6 +43,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = "detailView"
         
         config()
         fetchData()
