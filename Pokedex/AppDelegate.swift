@@ -25,6 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let window = UIWindow(frame: UIScreen.main.bounds)
+        
+        
+        if ProcessInfo.processInfo.arguments.contains("UITests") {
+            window.layer.speed = 100
+        }
+        
         self.window = window
         window.rootViewController = initialViewController
         window.makeKeyAndVisible()
