@@ -10,6 +10,8 @@ import Foundation
 
 class RequestMaker {
     
+    static let decoder = JSONDecoder()
+    
     enum Endpoint {
         
         case list
@@ -63,7 +65,7 @@ class RequestMaker {
                 return
             }
             do {
-                let decodedObject = try JSONDecoder().decode(T.self, from: data)
+                let decodedObject = try RequestMaker.decoder.decode(T.self, from: data)
                 
                 completion(decodedObject)
             } catch let error {
