@@ -92,6 +92,10 @@ extension PokemonListViewController: PokemonListViewType {
         self.activityView.isHidden = true
     }
     
+    func reloadSingleItem(at index: Int) {
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.automatic)
+    }
+    
 }
 
 enum PokemonSwipeAction {

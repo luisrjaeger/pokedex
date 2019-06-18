@@ -102,7 +102,16 @@ extension PokemonListPresenter: PokemonListInteractorOutput {
     }
     
     func pokemonSaved(_ data: Pokemon) {
-        fetchData()
+        if let index = pokemonList.firstIndex(where: { $0.id == data.id }) {
+            pokemonList[index] = data
+        }
+        
+        if let index = searchList.firstIndex(where: { $0.id == data.id }) {
+            searchList[index] = data
+            DispatchQueue.main.async {
+                self.view?.reloadSingleItem(at: index)
+            }
+        }
     }
     
 }

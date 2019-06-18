@@ -24,6 +24,7 @@
 		A0272EC322B21C5000505C55 /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0272EC222B21C5000505C55 /* NSLayoutConstraintExtension.swift */; };
 		A05FFFCF22B1E31800BD57B3 /* StatBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05FFFCE22B1E31800BD57B3 /* StatBarView.xib */; };
 		A05FFFD122B1E33700BD57B3 /* StatBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFFD022B1E33700BD57B3 /* StatBarView.swift */; };
+		A068A97A22B95F920082E307 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A068A97922B95F920082E307 /* ItemTableViewCell.swift */; };
 		A0937F2722AE20F500C81BFD /* MoveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0937F2622AE20F500C81BFD /* MoveTableViewCell.swift */; };
 		A0A08F5F22B3482A00B04EC0 /* TypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A08F5E22B3482A00B04EC0 /* TypeView.xib */; };
 		A0A08F6122B3483F00B04EC0 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A08F6022B3483F00B04EC0 /* TypeView.swift */; };
@@ -87,6 +88,7 @@
 		A0272EC222B21C5000505C55 /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		A05FFFCE22B1E31800BD57B3 /* StatBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatBarView.xib; sourceTree = "<group>"; };
 		A05FFFD022B1E33700BD57B3 /* StatBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBarView.swift; sourceTree = "<group>"; };
+		A068A97922B95F920082E307 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		A0937F2622AE20F500C81BFD /* MoveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTableViewCell.swift; sourceTree = "<group>"; };
 		A0A08F5E22B3482A00B04EC0 /* TypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeView.xib; sourceTree = "<group>"; };
 		A0A08F6022B3483F00B04EC0 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				A01A5C8B22AC11F500CDA018 /* PokemonTableViewCell.swift */,
 				A0937F2622AE20F500C81BFD /* MoveTableViewCell.swift */,
+				A068A97922B95F920082E307 /* ItemTableViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				A0FA05C122B141010002ECFC /* PokemonTypeView.swift in Sources */,
 				A00B320022AC48FF00DB850E /* ItemListViewController.swift in Sources */,
 				ABD8C93B22AAC4FA00AB3718 /* AppDelegate.swift in Sources */,
+				A068A97A22B95F920082E307 /* ItemTableViewCell.swift in Sources */,
 				A0B0407A22AEA9C8008634AE /* CustomSearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

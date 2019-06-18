@@ -10,6 +10,7 @@ import UIKit
 
 protocol PokemonListViewType: AnyObject {
     func reloadData()
+    func reloadSingleItem(at index: Int)
 }
 
 protocol PokemonListPresenterType {

@@ -26,7 +26,7 @@ class RequestMaker {
             case .move:
                 return "https://pokeapi.co/api/v2/"
             default:
-                return "http://localhost:3000/"
+                return "https://pokemon-mock.herokuapp.com/api/"//"http://localhost:3000/"
             }
         }
         

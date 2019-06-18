@@ -31,7 +31,6 @@ class PokemonTableViewCell: UITableViewCell {
         } else {
             secondaryTypeView.isHidden = true
         }
-        
     }
     
 }
