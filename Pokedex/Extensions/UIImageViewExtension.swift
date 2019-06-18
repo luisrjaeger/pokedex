@@ -12,6 +12,7 @@ import Nuke
 extension UIImage {
     
     static let pikachu = UIImage(named: "pikashadow")!
+    static let star = UIImage(named: "ic_star")!
     
 }
 

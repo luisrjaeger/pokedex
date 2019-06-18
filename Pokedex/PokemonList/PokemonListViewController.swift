@@ -25,6 +25,10 @@ class PokemonListViewController: UIViewController {
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
         configTable()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         presenter.fetchData()
     }
 
@@ -39,7 +43,9 @@ extension PokemonListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") {
-            (detailViewController as? DetailViewController)?.pokemon = presenter.pokemon(at: indexPath.row)
+            let pokemon = presenter.pokemon(at: indexPath.row)
+            (detailViewController as? PokemonViewController)?.presenter =
+                PokemonPresenter(pokemon: pokemon, view: detailViewController as! PokemonViewType)
             
             navigationController?.present(detailViewController, animated: true)
         }
@@ -104,9 +110,9 @@ enum PokemonSwipeAction {
     var color: UIColor {
         switch self {
         case .addFavorite:
-            return .purple
+            return .orange
         case .removeFavorite:
-            return .red
+            return .gray
         }
     }
     

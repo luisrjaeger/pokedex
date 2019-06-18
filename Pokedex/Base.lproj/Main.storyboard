@@ -84,10 +84,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyz-1S-oLr" userLabel="moves">
-                                                    <rect key="frame" x="20" y="0.0" width="339" height="75"/>
+                                                    <rect key="frame" x="20" y="0.0" width="300" height="75"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucG-65-H5H">
-                                                            <rect key="frame" x="0.0" y="0.0" width="339" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                             <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view verifyAmbiguity="off" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-ng-5BO" customClass="TypeView" customModule="Pokedex" customModuleProvider="target">
-                                                    <rect key="frame" x="359" y="18" width="40" height="40"/>
+                                                    <rect key="frame" x="320" y="18" width="40" height="40"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="JfB-4s-GPr"/>
@@ -525,16 +525,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="VvU-6W-mpW" userLabel="names">
-                                                    <rect key="frame" x="88" y="28" width="221" height="42"/>
+                                                    <rect key="frame" x="88" y="28" width="182" height="42"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB4-bX-Y2j">
-                                                            <rect key="frame" x="0.0" y="0.0" width="221" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="182" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYf-fT-kwP">
-                                                            <rect key="frame" x="0.0" y="21.5" width="221" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="21.5" width="182" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                             <color key="textColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -542,7 +542,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WBt-uF-Vjg" userLabel="types">
-                                                    <rect key="frame" x="309" y="29" width="90" height="40"/>
+                                                    <rect key="frame" x="270" y="29" width="90" height="40"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIk-PR-br4" customClass="TypeView" customModule="Pokedex" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -628,10 +628,10 @@
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="-6.0267857142857144"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Pokemon View Controller-->
         <scene sceneID="4sb-8N-lqG">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="9QE-PC-tBb" customClass="DetailViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="9QE-PC-tBb" customClass="PokemonViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ifc-X2-JEM" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -646,14 +646,33 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ol4-db-0c1" userLabel="whitepanel" customClass="GradientView" customModule="Pokedex" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="912" width="414" height="818"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcT-CH-gTr">
-                                        <rect key="frame" x="157.5" y="55" width="99.5" height="55"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
-                                        <color key="textColor" name="text"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4Ic-2j-DQl" userLabel="stackname">
+                                        <rect key="frame" x="130" y="55" width="154.5" height="55"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcT-CH-gTr">
+                                                <rect key="frame" x="0.0" y="0.0" width="99.5" height="55"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                                <color key="textColor" name="text"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBa-dc-57q">
+                                                <rect key="frame" x="114.5" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="fmQ-o5-YJW"/>
+                                                    <constraint firstAttribute="height" constant="40" id="wPC-Pc-rsu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <state key="normal" title="Favorite">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="favoriteAction" destination="9QE-PC-tBb" eventType="touchUpInside" id="rAy-iE-2ez"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dIc-7t-nkU">
-                                        <rect key="frame" x="152" y="120" width="110" height="30"/>
+                                        <rect key="frame" x="152" y="135" width="110" height="30"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCC-GC-TAv" customClass="PokemonTypeView" customModule="Pokedex" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
@@ -674,19 +693,19 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAF-i3-OBJ">
-                                        <rect key="frame" x="20" y="170" width="374" height="20.5"/>
+                                        <rect key="frame" x="20" y="185" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <color key="textColor" name="text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-qA-6yu" userLabel="stats">
-                                        <rect key="frame" x="185.5" y="210.5" width="43" height="20.5"/>
+                                        <rect key="frame" x="185.5" y="225.5" width="43" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lNe-pH-Q24" userLabel="stackStats">
-                                        <rect key="frame" x="10" y="251" width="394" height="240"/>
+                                        <rect key="frame" x="10" y="266" width="394" height="240"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dF7-gf-4ig" userLabel="hp" customClass="StatBarView" customModule="Pokedex" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
@@ -753,6 +772,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="4Ic-2j-DQl" firstAttribute="centerX" secondItem="ol4-db-0c1" secondAttribute="centerX" id="6dw-8T-oIX"/>
+                                    <constraint firstItem="dIc-7t-nkU" firstAttribute="top" secondItem="4Ic-2j-DQl" secondAttribute="bottom" constant="25" id="EC0-cx-AS2"/>
                                     <constraint firstItem="MAF-i3-OBJ" firstAttribute="top" secondItem="dIc-7t-nkU" secondAttribute="bottom" constant="20" id="EPK-iM-QAA"/>
                                     <constraint firstItem="lWl-qA-6yu" firstAttribute="centerX" secondItem="ol4-db-0c1" secondAttribute="centerX" id="EfR-Jf-oDq"/>
                                     <constraint firstItem="lNe-pH-Q24" firstAttribute="leading" secondItem="ol4-db-0c1" secondAttribute="leading" constant="10" id="KEr-zU-qPP"/>
@@ -760,11 +781,9 @@
                                     <constraint firstItem="dIc-7t-nkU" firstAttribute="centerX" secondItem="ol4-db-0c1" secondAttribute="centerX" id="USZ-RI-B6S"/>
                                     <constraint firstAttribute="trailing" secondItem="lNe-pH-Q24" secondAttribute="trailing" constant="10" id="afJ-hC-66s"/>
                                     <constraint firstItem="lWl-qA-6yu" firstAttribute="top" secondItem="MAF-i3-OBJ" secondAttribute="bottom" constant="20" id="cEe-H6-fbX"/>
+                                    <constraint firstItem="4Ic-2j-DQl" firstAttribute="top" secondItem="ol4-db-0c1" secondAttribute="top" constant="55" id="fOR-6b-I39"/>
                                     <constraint firstItem="lNe-pH-Q24" firstAttribute="top" secondItem="lWl-qA-6yu" secondAttribute="bottom" constant="20" id="lvJ-1x-8WY"/>
-                                    <constraint firstItem="VcT-CH-gTr" firstAttribute="top" secondItem="ol4-db-0c1" secondAttribute="top" constant="55" id="qWC-38-cPf"/>
-                                    <constraint firstItem="dIc-7t-nkU" firstAttribute="top" secondItem="VcT-CH-gTr" secondAttribute="bottom" constant="10" id="rOC-JL-uYI"/>
                                     <constraint firstAttribute="trailing" secondItem="MAF-i3-OBJ" secondAttribute="trailing" constant="20" id="tJL-Lp-m4T"/>
-                                    <constraint firstItem="VcT-CH-gTr" firstAttribute="centerX" secondItem="ol4-db-0c1" secondAttribute="centerX" id="zX1-cT-6MJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -815,6 +834,7 @@
                     <connections>
                         <outlet property="backButton" destination="VWH-gW-kei" id="ti1-Jd-VsZ"/>
                         <outlet property="descriptionView" destination="MAF-i3-OBJ" id="PRD-mY-JXy"/>
+                        <outlet property="favoriteButton" destination="yBa-dc-57q" id="9PX-iX-eay"/>
                         <outlet property="imageCenterVertically" destination="Z07-Z8-Qfg" id="8K9-uh-akh"/>
                         <outlet property="imageHeight" destination="273-Bn-U3a" id="aqT-lN-x55"/>
                         <outlet property="imageView" destination="iWi-WA-iNO" id="Im2-zA-XeJ"/>

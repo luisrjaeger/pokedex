@@ -8,12 +8,13 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class PokemonViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var superView: GradientView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var pokemonTypeView: PokemonTypeView!
     @IBOutlet weak var pokemonTypeView2: PokemonTypeView!
     @IBOutlet weak var descriptionView: UILabel!
@@ -23,53 +24,33 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageCenterVertically: NSLayoutConstraint!
     @IBOutlet weak var whitePanelTopConstraint: NSLayoutConstraint!
     
-//    @IBOutlet weak var hp: StatBarView!
-//    @IBOutlet weak var atk: StatBarView!
-//    @IBOutlet weak var def: StatBarView!
-//    @IBOutlet weak var satk: StatBarView!
-//    @IBOutlet weak var sdef: StatBarView!
-//    @IBOutlet weak var spd: StatBarView!
-    
     @IBOutlet var statsView: [StatBarView]!
     
-    let requestMaker: RequestMaker = RequestMaker()
+    var presenter: PokemonPresenterType!
     
     @IBAction func backAction() {
         dismiss(animated: true, completion: nil)
     }
     
-    var pokemon: Pokemon?
+    @IBAction func favoriteAction() {
+        presenter.onFavoriteClicked()
+    }
+    
     var color: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "detailView"
-        
-        config()
-        fetchData()
-        if let type = pokemon?.types.first {
-            pokemonTypeView.config(type: type)
-        }
-        
-        guard pokemon?.types.count ?? 0 > 1 else {
-            return
-        }
-        
-        if let type = pokemon?.types[1] {
-            pokemonTypeView2.isHidden = false
-            pokemonTypeView2.config(type: type)
-        }
+        presenter.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if pokemon?.description == nil { self.loadingAnimation() }
+        presenter.viewDidAppear()
     }
     
-    func loadingAnimation() {
-        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
-            self.imageView.alpha = 0.2
-        })
-    }
+}
+
+extension PokemonViewController: PokemonViewType {
     
     func animateImageToTop() {
         imageView.layer.removeAllAnimations()
@@ -85,22 +66,33 @@ class DetailViewController: UIViewController {
         }
     }
     
-    func config() {
-        if let pokemon = self.pokemon {
-            color = pokemon.types.first?.color
-            
-            superView.setGradientColor(regressing: color)
-            imageView.loadImage(from: pokemon.image)
-            statLabel.textColor = color
-            
-            name.text = pokemon.name.capitalized
-        }
+    func configFirstInformation(for pokemon: Pokemon) {
+        color = pokemon.types.first?.color
+        
+        superView.setGradientColor(regressing: color)
+        imageView.loadImage(from: pokemon.image)
+        statLabel.textColor = color
+        
+        name.text = pokemon.name.capitalized
     }
     
-    func configStats() {
-        descriptionView.text = pokemon?.description//?.removingAllNewlines
+    func configTypes(_ types: [PokemonType]) {
+        if let type = types.first {
+            pokemonTypeView.config(type: type)
+        }
         
-        if let stats = pokemon?.stats {
+        guard types.count > 1 else {
+            return
+        }
+        
+        pokemonTypeView2.isHidden = false
+        pokemonTypeView2.config(type: types[1])
+    }
+    
+    func configStats(for pokemon: Pokemon) {
+        descriptionView.text = pokemon.description
+        
+        if let stats = pokemon.stats {
             for stat in stats {
                 switch stat.name {
                 case .hp:
@@ -120,22 +112,16 @@ class DetailViewController: UIViewController {
         }
     }
     
-}
-
-extension DetailViewController {
+    func loadingAnimation() {
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.imageView.alpha = 0.2
+        })
+    }
     
-    func fetchData() {
-        if let pokemon = self.pokemon {
-            requestMaker.make(withEndpoint: .details(query: String(pokemon.id))) {
-                (pokemon: Pokemon) in
-                
-                self.pokemon = pokemon
-                DispatchQueue.main.async {
-                    self.animateImageToTop()
-                    self.configStats()
-                }
-            }
-        }
+    func configFavorite(checked favorite: Bool) {
+        let tintableImg = UIImage.star.withRenderingMode(.alwaysTemplate)
+        favoriteButton.setImage(tintableImg, for: .normal)
+        favoriteButton.tintColor = favorite ? .orange : .gray
     }
     
 }

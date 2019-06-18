@@ -1,27 +1,27 @@
 //
-//  PokemonListInteractor.swift
+//  PokemonInteractor.swift
 //  Pokedex
 //
-//  Created by Luís Ricardo Jaeger on 15/06/19.
+//  Created by Luís Ricardo Jaeger on 17/06/19.
 //  Copyright © 2019 CWI Software. All rights reserved.
 //
 
 import Foundation
 
-class PokemonListInteractor: PokemonListInteractorInput {
+class PokemonInteractor: PokemonInteractorInput {
     
     private let requestMaker = RequestMaker()
     
-    weak var output: PokemonListInteractorOutput!
+    weak var output: PokemonInteractorOutput!
     
-    init(output: PokemonListInteractorOutput) {
+    init(output: PokemonInteractorOutput) {
         self.output = output
     }
     
-    func fetchData() {
-        requestMaker.make(withEndpoint: .pokemons) {
-            (pokemonList: [Pokemon]) in
-            self.output?.dataFetched(pokemonList)
+    func fetchData(pokemonId: Int) {
+        requestMaker.make(withEndpoint: .pokemon(query: String(pokemonId))) {
+            (pokemon: Pokemon) in
+            self.output?.dataFetched(pokemon)
         }
     }
     

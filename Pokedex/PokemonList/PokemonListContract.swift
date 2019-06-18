@@ -12,20 +12,19 @@ protocol PokemonListViewType: AnyObject {
     func reloadData()
 }
 
-protocol PokemonListPresenterType: UITableViewDataSource {
+protocol PokemonListPresenterType {
     var view: PokemonListViewType? { get set }
     func fetchData()
     func pokemon(at index: Int) -> Pokemon
 }
 
-protocol PokemonListInteractorInput {
-    
+protocol PokemonListInteractorInput: AnyObject {
+    var output: PokemonListInteractorOutput! { get set }
     func fetchData()
-    
+    func saveFavorite(pokemon: Pokemon)
 }
 
 protocol PokemonListInteractorOutput: AnyObject {
-    
-    func dataFetched(_ data: PokemonList)
-    
+    func dataFetched(_ data: [Pokemon])
+    func pokemonSaved(_ data: Pokemon)
 }

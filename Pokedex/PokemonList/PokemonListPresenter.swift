@@ -20,20 +20,20 @@ class PokemonListPresenter: NSObject {
     
     private let idKey = "favorite.ids"
     
-    override init() {
-        super.init()
-        
-        if let data = UserDefaults.standard.array(forKey: idKey) as? [Int] {
-            favoriteIds = Set(data)
-        }
-    }
-    
-    private var favoriteIds = Set<Int>() {
-        didSet {
-            print(favoriteIds)
-            UserDefaults.standard.set(Array(favoriteIds), forKey: idKey)
-        }
-    }
+//    override init() {
+//        super.init()
+//
+//        if let data = UserDefaults.standard.array(forKey: idKey) as? [Int] {
+//            favoriteIds = Set(data)
+//        }
+//    }
+//
+//    private var favoriteIds = Set<Int>() {
+//        didSet {
+//            print(favoriteIds)
+//            UserDefaults.standard.set(Array(favoriteIds), forKey: idKey)
+//        }
+//    }
     
     func fetchData() {
         interactor.fetchData()
@@ -48,18 +48,22 @@ class PokemonListPresenter: NSObject {
     }
     
     func swipe(at index: Int) {
-        let pokemonId = pokemon(at: index).id
+        //let pokemonId = pokemon(at: index).id
+        var poke = pokemon(at: index)
+        poke.favorite = !poke.favorite
+        interactor.saveFavorite(pokemon: poke)
         
-        guard favoriteIds.contains(pokemonId) else {
-            favoriteIds.insert(pokemonId)
-            return
-        }
-        
-        favoriteIds.remove(pokemonId)
+//        guard favoriteIds.contains(pokemonId) else {
+//            favoriteIds.insert(pokemonId)
+//            return
+//        }
+//
+//        favoriteIds.remove(pokemonId)
     }
     
     func swipeAction(for index: Int) -> PokemonSwipeAction {
-        return favoriteIds.contains(pokemon(at: index).id) ? .removeFavorite : .addFavorite
+        return pokemon(at: index).favorite ? .removeFavorite : .addFavorite
+//        return favoriteIds.contains(pokemon(at: index).id) ? .removeFavorite : .addFavorite
     }
     
 }
@@ -88,13 +92,17 @@ extension PokemonListPresenter: UITableViewDataSource {
 
 extension PokemonListPresenter: PokemonListInteractorOutput {
     
-    func dataFetched(_ data: PokemonList) {
-        self.pokemonList = data.pokemons
-        self.searchList = data.pokemons
+    func dataFetched(_ data: [Pokemon]) {
+        pokemonList = data
+        searchList = data
 
         DispatchQueue.main.async {
             self.view?.reloadData()
         }
+    }
+    
+    func pokemonSaved(_ data: Pokemon) {
+        fetchData()
     }
     
 }

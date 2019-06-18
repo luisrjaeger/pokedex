@@ -30,8 +30,8 @@ class PokedexTests: XCTestCase {
         let expectation = XCTestExpectation(description: "")
         
         let requestMaker = RequestMaker()
-        requestMaker.make(withEndpoint: .list) { (list: PokemonList) in
-            XCTAssertGreaterThan(list.pokemons.count, 0)
+        requestMaker.make(withEndpoint: .pokemons) { (list: [Pokemon]) in
+            XCTAssertGreaterThan(list.count, 0)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 2)
@@ -41,7 +41,7 @@ class PokedexTests: XCTestCase {
         let expectation = XCTestExpectation(description: "")
         
         let requestMaker = RequestMaker()
-        requestMaker.make(withEndpoint: .list) { (result: RequestMaker.RequestResult<Pokemon>) in
+        requestMaker.make(withEndpoint: .pokemons) { (result: RequestMaker.RequestResult<Pokemon>) in
             switch result {
             case .success:
                 XCTFail()

@@ -15,6 +15,7 @@ struct Pokemon: Codable {
     let image: String
     let types: [PokemonType]
     let description: String?
+    var favorite: Bool = false
     let stats: [Stat]?
     
 }
