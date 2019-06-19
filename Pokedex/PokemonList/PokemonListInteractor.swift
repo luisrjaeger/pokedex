@@ -26,7 +26,7 @@ class PokemonListInteractor: PokemonListInteractorInput {
     }
     
     func saveFavorite(pokemon: Pokemon) {
-        requestMaker.make(withEndpoint: .pokemon(query: String(pokemon.id)), send: pokemon) {
+        requestMaker.make(withEndpoint: .pokemon(query: String(pokemon.id)), sending: pokemon) {
             (data: Pokemon) in
             self.output?.pokemonSaved(pokemon)
         }

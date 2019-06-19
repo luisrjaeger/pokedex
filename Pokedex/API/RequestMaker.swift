@@ -13,8 +13,6 @@ class RequestMaker {
     static let decoder = JSONDecoder()
     static let encoder = JSONEncoder()
     
-    
-
     let session = URLSession.shared
     
     typealias CompletionCallback<T: Decodable> = (RequestResult<T>) -> Void
@@ -32,8 +30,8 @@ class RequestMaker {
         })
     }
     
-    func make<E: Encodable, D: Decodable>(withEndpoint endpoint: Endpoint, send data: E, completion: @escaping SuccessCallback<D>) {
-        return make(withEndpoint: endpoint, send: data, completion: { (result: RequestResult<D>) in
+    func make<E: Encodable, D: Decodable>(withEndpoint endpoint: Endpoint, sending data: E, completion: @escaping SuccessCallback<D>) {
+        return make(withEndpoint: endpoint, sending: data, completion: { (result: RequestResult<D>) in
             switch result {
             case .success(let object):
                 completion(object)
@@ -51,28 +49,13 @@ class RequestMaker {
         
         let dataTask = session.dataTask(with: url) {
             (data: Data?, response: URLResponse?, error: Error?) in
-            
-            guard error == nil else {
-                completion(.failure(.requestFailed))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.invalidData))
-                return
-            }
-            do {
-                let decodedObject = try RequestMaker.decoder.decode(T.self, from: data)
-                completion(.success(decodedObject))
-            } catch _ {
-                completion(.failure(.decodingFailed))
-            }
+            self.handleDataTaskResult(data: data, response: response, error: error, completion: completion)
         }
         
         dataTask.resume()
     }
     
-    func make<E: Encodable, D: Decodable>(withEndpoint endpoint: Endpoint, send data: E, completion: @escaping CompletionCallback<D>) {
+    func make<E: Encodable, D: Decodable>(withEndpoint endpoint: Endpoint, sending data: E, completion: @escaping CompletionCallback<D>) {
         guard let jsonData = try? RequestMaker.encoder.encode(data) else {
             completion(.failure(.encodingFailed))
             return
@@ -90,25 +73,28 @@ class RequestMaker {
         
         let dataTask = session.dataTask(with: request) {
             (data: Data?, response: URLResponse?, error: Error?) in
-            
-            guard error == nil else {
-                completion(.failure(.requestFailed))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.invalidData))
-                return
-            }
-            do {
-                let decodedObject = try RequestMaker.decoder.decode(D.self, from: data)
-                completion(.success(decodedObject))
-            } catch _ {
-                completion(.failure(.decodingFailed))
-            }
+            self.handleDataTaskResult(data: data, response: response, error: error, completion: completion)
         }
         
         dataTask.resume()
+    }
+    
+    func handleDataTaskResult<D: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping CompletionCallback<D>) {
+        guard error == nil else {
+            completion(.failure(.requestFailed))
+            return
+        }
+        
+        guard let data = data else {
+            completion(.failure(.invalidData))
+            return
+        }
+        do {
+            let decodedObject = try RequestMaker.decoder.decode(D.self, from: data)
+            completion(.success(decodedObject))
+        } catch _ {
+            completion(.failure(.decodingFailed))
+        }
     }
     
 }

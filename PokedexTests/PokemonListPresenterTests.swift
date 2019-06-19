@@ -39,4 +39,8 @@ class PokemonListViewMock: PokemonListViewType {
         fulfill()
     }
     
+    func reloadSingleItem(at index: Int) {
+        fulfill()
+    }
+    
 }

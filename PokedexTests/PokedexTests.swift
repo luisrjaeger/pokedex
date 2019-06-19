@@ -20,7 +20,7 @@ class PokedexTests: XCTestCase {
     }
 
     func testDecoding() {
-        let jsonURL = Bundle(for: PokedexTests.self).url(forResource: "pokemons_v2", withExtension: "json")!
+        let jsonURL = Bundle(for: PokedexTests.self).url(forResource: "pokemons_v3", withExtension: "json")!
         let data = try! Data(contentsOf: jsonURL)
     
         XCTAssertNoThrow(try RequestMaker.decoder.decode(PokemonResponse.self, from: data))

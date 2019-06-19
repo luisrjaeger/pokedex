@@ -10,7 +10,8 @@ import Foundation
 
 struct PokemonResponse: Codable {
     
-    let list: [Pokemon]
-    let details: [Pokemon]
+    let pokemon: [Pokemon]
+    let move: [Move]
+    let item: [Item]
     
 }
