@@ -17,6 +17,8 @@ class FavoriteListPresenter: NSObject {
     private var pokemonList = [Pokemon]()
     private var searchList = [Pokemon]()
     
+    private var isRemoveEnabled = false
+    
     func filterPokemons(with text: String) {
         searchList = pokemonList.filter({ $0.name.lowercased().prefix(text.count) == text.lowercased() })
     }
@@ -24,6 +26,7 @@ class FavoriteListPresenter: NSObject {
 }
 
 extension FavoriteListPresenter: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchList.count
     }
@@ -32,7 +35,7 @@ extension FavoriteListPresenter: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favorite", for: indexPath)
         
         if let pokemonCell = cell as? FavoriteCollectionViewCell {
-            pokemonCell.config(with: pokemon(at: indexPath.item))
+            pokemonCell.config(with: pokemon(at: indexPath.item), isRemoveEnabled: isRemoveEnabled)
         }
         
         return cell
@@ -50,6 +53,17 @@ extension FavoriteListPresenter: FavoriteListPresenterType {
         return searchList[index]
     }
     
+    func toggleRemoveEnabled() {
+        isRemoveEnabled = !isRemoveEnabled
+        view.reloadData()
+    }
+    
+    func remove(at index: Int) {
+        var poke = pokemon(at: index)
+        poke.favorite = false
+        
+        interactor.removeFavorite(pokemon: poke)
+    }
     
 }
 
@@ -62,7 +76,19 @@ extension FavoriteListPresenter: FavoriteListInteractorOutput {
         DispatchQueue.main.async {
             self.view.reloadData()
         }
-        print(pokemonList)
+    }
+    
+    func pokemonSaved(_ data: Pokemon) {
+        if let index = pokemonList.firstIndex(where: { $0.id == data.id }) {
+            pokemonList.remove(at: index)
+        }
+        
+        if let index = searchList.firstIndex(where: { $0.id == data.id }) {
+            searchList.remove(at: index)
+            DispatchQueue.main.async {
+                self.view?.reloadData()
+            }
+        }
     }
     
 }

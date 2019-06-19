@@ -93,7 +93,7 @@ extension PokemonListViewController: PokemonListViewType {
     }
     
     func reloadSingleItem(at index: Int) {
-        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.automatic)
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.none)
     }
     
 }

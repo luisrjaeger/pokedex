@@ -18,11 +18,15 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var statLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     
-    func config(with model: Pokemon) {
+    func config(with model: Pokemon, isRemoveEnabled removeEnabled: Bool) {
         backView.setGradientColor(regressing: model.mainType?.color)
         imageView.loadImage(from: model.image)
         
         nameLabel.text = model.name
+        
+        if removeEnabled {
+            backView.shake()
+        }
         
         statLabel.textColor = model.mainType?.color
         if let stat = model.strongestStat {

@@ -9,6 +9,7 @@
 import Foundation
 
 protocol FavoriteListViewType: AnyObject {
+    //func reloadSingleItem(at index: Int)
     func reloadData()
 }
 
@@ -16,13 +17,17 @@ protocol FavoriteListPresenterType {
     var view: FavoriteListViewType! { get set }
     func fetchData()
     func pokemon(at index: Int) -> Pokemon
+    func toggleRemoveEnabled()
+    func remove(at index: Int)
 }
 
 protocol FavoriteListInteractorInput: AnyObject {
     var output: FavoriteListInteractorOutput! { get set }
     func fetchData()
+    func removeFavorite(pokemon: Pokemon)
 }
 
 protocol FavoriteListInteractorOutput: AnyObject {
     func dataFetched(_ data: [Pokemon])
+    func pokemonSaved(_ data: Pokemon)
 }

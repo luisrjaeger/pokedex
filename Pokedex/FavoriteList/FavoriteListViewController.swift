@@ -23,10 +23,13 @@ class FavoriteListViewController: UIViewController {
         
         presenter.view = self
         collectionView.dataSource = presenter
+        
         searchBar.delegate = self
+        collectionView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         presenter.fetchData()
     }
     
@@ -46,6 +49,14 @@ extension FavoriteListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter.filterPokemons(with: searchText)
         collectionView.reloadData()
+    }
+    
+}
+
+extension FavoriteListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.toggleRemoveEnabled()
     }
     
 }

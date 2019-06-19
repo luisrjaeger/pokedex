@@ -29,4 +29,11 @@ extension FavoriteListInteractor: FavoriteListInteractorInput {
         }
     }
     
+    func removeFavorite(pokemon: Pokemon) {
+        requestMaker.make(withEndpoint: .pokemon(query: String(pokemon.id)), sending: pokemon) {
+            (pokemon: Pokemon) in
+            self.output.pokemonSaved(pokemon)
+        }
+    }
+    
 }

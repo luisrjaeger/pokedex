@@ -47,4 +47,12 @@ extension UIView {
         }
     }
     
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
+        animation.duration = 0.2
+        animation.repeatCount = .infinity
+        animation.values = [0.0, 0.02, -0.02, 0.0]
+        layer.add(animation, forKey: "shake")
+    }
+    
 }
