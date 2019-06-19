@@ -13,39 +13,7 @@ class RequestMaker {
     static let decoder = JSONDecoder()
     static let encoder = JSONEncoder()
     
-    enum Endpoint {
-        
-        case pokemons
-        case pokemon(query: String)
-        case moves
-        case move(query: String)
-        case items
-        
-        var baseUrl: String {
-            switch self {
-            case .move:
-                return "https://pokeapi.co/api/v2/"
-            default:
-                return "https://pokemon-mock.herokuapp.com/api/"//"http://localhost:3000/"
-            }
-        }
-        
-        var url: String {
-            switch self {
-            case .pokemons:
-                return "pokemon"
-            case let .pokemon(query):
-                return "pokemon/\(query)"
-            case .moves:
-                return "move"
-            case let .move(query):
-                return "move/\(query)"
-            case .items:
-                return "item"
-            }
-        }
-        
-    }
+    
 
     let session = URLSession.shared
     

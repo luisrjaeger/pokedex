@@ -17,4 +17,21 @@ enum StatName: String, Codable {
     case def = "defense"
     case atk = "attack"
     
+    var shortName: String {
+        switch self {
+        case .hp:
+            return "hp"
+        case .spd:
+            return "spd"
+        case .sdef:
+            return "sdef"
+        case .satk:
+            return "satk"
+        case .def:
+            return "def"
+        case .atk:
+            return "atk"
+        }
+    }
+    
 }

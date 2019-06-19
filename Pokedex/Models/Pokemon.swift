@@ -17,5 +17,12 @@ struct Pokemon: Codable {
     let description: String?
     var favorite: Bool = false
     let stats: [Stat]?
+ 
+    var mainType: PokemonType? {
+        return self.types.first
+    }
     
+    var strongestStat: Stat? {
+        return stats?.max { $0.value < $1.value }
+    }
 }
