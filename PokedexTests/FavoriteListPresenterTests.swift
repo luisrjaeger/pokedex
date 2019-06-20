@@ -21,6 +21,7 @@ class FavoriteListPresenterTests: XCTestCase {
         stats: nil
     )
     
+    //This test have some unknown problem u_U
     func testRemove() {
         let expectation = XCTestExpectation(description: "")
         let presenter = FavoriteListPresenter()
