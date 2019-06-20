@@ -86,7 +86,7 @@ extension FavoriteListPresenter: FavoriteListInteractorOutput {
         if let index = searchList.firstIndex(where: { $0.id == data.id }) {
             searchList.remove(at: index)
             DispatchQueue.main.async {
-                self.view?.reloadData()
+                self.view.reloadData()
             }
         }
     }

@@ -11,16 +11,42 @@ import XCTest
 
 class FavoriteListPresenterTests: XCTestCase {
     
+    let pokemon = Pokemon(
+        id: 1,
+        name: "Pikachu",
+        image: "img",
+        types: [PokemonType.electric],
+        description: "desc",
+        favorite: true,
+        stats: nil
+    )
+    
+    func testRemove() {
+        let expectation = XCTestExpectation(description: "")
+        let presenter = FavoriteListPresenter()
+        let view = FavoriteListViewMock()
+        
+        presenter.view = view
+        presenter.dataFetched([pokemon])
+        
+        view.fulfillData = { expectation.fulfill() }
+        presenter.view = view
+        
+        presenter.remove(at: 0)
+        
+        wait(for: [expectation], timeout: 2)
+    }
+    
     func testFetchData() {
         let expectation = XCTestExpectation(description: "")
         let presenter = FavoriteListPresenter()
-        let view = FavoriteListViewMock {
-            expectation.fulfill()
-        }
-        
+        let view = FavoriteListViewMock()
+
+        view.fulfillData = { expectation.fulfill() }
+
         presenter.view = view
         presenter.fetchData()
-        
+
         wait(for: [expectation], timeout: 2)
     }
     
@@ -28,18 +54,15 @@ class FavoriteListPresenterTests: XCTestCase {
 
 class FavoriteListViewMock: FavoriteListViewType {
     
-    let fulfill: () -> Void
-    
-    init(fulfill: @escaping () -> Void) {
-        self.fulfill = fulfill
-    }
-    
+    var fulfillData: FulfillFunction?
+    var fulfillSingle: FulfillFunction?
+
     func reloadData() {
-        fulfill()
+        fulfillData?()
     }
     
     func reloadSingleItem(at index: Int) {
-        fulfill()
+        fulfillSingle?()
     }
     
 }

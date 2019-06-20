@@ -65,6 +65,12 @@ class PokedexUITests: XCTestCase {
     }
     
     func testFavoritesItem() {
+        let list = app.descendants(matching: .cell)
+        let firstItem = list.firstMatch
+        firstItem.swipeRight()
+        
+        firstItem.buttons["Favorite"].tap()
+        
         let tabBarsQuery = app.tabBars
         tabBarsQuery.buttons["Favorites"].tap()
         

@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        
         if ProcessInfo.processInfo.arguments.contains("UITests") {
             window.layer.speed = 100
         }
