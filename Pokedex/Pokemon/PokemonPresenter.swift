@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PokemonPresenter: PokemonPresenterType {
+class PokemonPresenter: NSObject {
     
     private var pokemon: Pokemon!
     weak var view: PokemonViewType!
@@ -19,6 +19,10 @@ class PokemonPresenter: PokemonPresenterType {
         self.pokemon = pokemon
         self.view = view
     }
+    
+}
+
+extension PokemonPresenter: PokemonPresenterType {
     
     func viewDidLoad() {
         view?.configFirstInformation(for: pokemon)
@@ -31,7 +35,7 @@ class PokemonPresenter: PokemonPresenterType {
             view.loadingAnimation()
         }
     }
-
+    
     func onFavoriteClicked() {
         pokemon.favorite = !pokemon.favorite
         interactor.saveFavorite(pokemon: pokemon)

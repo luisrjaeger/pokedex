@@ -1,20 +1,20 @@
 //
-//  PokemonListPresenterTests.swift
+//  FavoriteListPresenterTests.swift
 //  PokedexTests
 //
-//  Created by Luís Ricardo Jaeger on 15/06/19.
+//  Created by Luís Ricardo Jaeger on 19/06/19.
 //  Copyright © 2019 CWI Software. All rights reserved.
 //
 
 @testable import Pokedex
 import XCTest
 
-class PokemonListPresenterTests: XCTestCase {
-
+class FavoriteListPresenterTests: XCTestCase {
+    
     func testFetchData() {
         let expectation = XCTestExpectation(description: "")
-        let presenter = PokemonListPresenter()
-        let view = PokemonListViewMock {
+        let presenter = FavoriteListPresenter()
+        let view = FavoriteListViewMock {
             expectation.fulfill()
         }
         
@@ -26,14 +26,14 @@ class PokemonListPresenterTests: XCTestCase {
     
 }
 
-class PokemonListViewMock: PokemonListViewType {
+class FavoriteListViewMock: FavoriteListViewType {
     
     let fulfill: () -> Void
     
     init(fulfill: @escaping () -> Void) {
         self.fulfill = fulfill
     }
-
+    
     func reloadData() {
         fulfill()
     }

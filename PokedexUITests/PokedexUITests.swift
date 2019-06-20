@@ -20,16 +20,60 @@ class PokedexUITests: XCTestCase {
         app.launch()
     }
 
-    func testExample() {
+    func testPokemonList() {
+        let cells = app.descendants(matching: .cell)
+        let firstCell = cells.firstMatch
+        firstCell.tap()
+
+        XCTAssertTrue(app.otherElements["detailView"].waitForExistence(timeout: 1))
+
+        //app.tables/*@START_MENU_TOKEN@*/.staticTexts["Bulbasaur"]/*[[".cells.staticTexts[\"Bulbasaur\"]",".staticTexts[\"Bulbasaur\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        //app.buttons["ic path"].tap()
+
+    }
+    
+    func testMoveList() {
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Moves"].tap()
+        
+        XCTAssert(app.navigationBars["Move"].exists)
+    }
+    
+    func testMoveDetail() {
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Moves"].tap()
+        
         let cells = app.descendants(matching: .cell)
         let firstCell = cells.firstMatch
         firstCell.tap()
         
-        XCTAssertTrue(app.otherElements["detailView"].waitForExistence(timeout: 1))
+        XCTAssertTrue(app.staticTexts["Base Power"].waitForExistence(timeout: 1))
+    }
+    
+    func testItemList() {
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Items"].tap()
         
-        //app.tables/*@START_MENU_TOKEN@*/.staticTexts["Bulbasaur"]/*[[".cells.staticTexts[\"Bulbasaur\"]",".staticTexts[\"Bulbasaur\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        //app.buttons["ic path"].tap()
+        XCTAssert(app.navigationBars["Item"].exists)
+    }
+    
+    func testFavorites() {
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Favorites"].tap()
         
+        XCTAssert(app.navigationBars["Favorite"].exists)
+    }
+    
+    func testFavoritesItem() {
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Favorites"].tap()
+        
+        let cells = app.descendants(matching: .cell)
+        let firstCell = cells.firstMatch
+        firstCell.tap()
+        
+        //????
+        //XCTAssert(app.navigationBars["Favorite"].exists)
     }
 
 }

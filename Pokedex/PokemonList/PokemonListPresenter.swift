@@ -115,3 +115,7 @@ extension PokemonListPresenter: PokemonListInteractorOutput {
     }
     
 }
+
+extension PokemonListPresenter: PokemonListPresenterType {
+    
+}
